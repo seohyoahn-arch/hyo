@@ -1,0 +1,2433 @@
+{
+  "$meta": {
+    "name": "Suno iOS Design System",
+    "version": "1.0.0",
+    "date": "2026-10-29",
+    "figma": "https://www.figma.com/design/L8QrbkFEPcfSiB8KLq5SBA/",
+    "device": "iPhone 402x874 pt",
+    "modes": {
+      "02 Semantic Color": [
+        "Dark (default)",
+        "Light"
+      ]
+    }
+  },
+  "01 Primitives": {
+    "neutral/0": {
+      "value": "#FFFFFF",
+      "code": {
+        "web": "var(--suno-prim-neutral-0)",
+        "ios": "SunoPrimitive.primNeutral0",
+        "android": "sunoPrimNeutral0"
+      }
+    },
+    "neutral/50": {
+      "value": "#F7F5F0",
+      "code": {
+        "web": "var(--suno-prim-neutral-50)",
+        "ios": "SunoPrimitive.primNeutral50",
+        "android": "sunoPrimNeutral50"
+      }
+    },
+    "neutral/100": {
+      "value": "#E5E5EA",
+      "code": {
+        "web": "var(--suno-prim-neutral-100)",
+        "ios": "SunoPrimitive.primNeutral100",
+        "android": "sunoPrimNeutral100"
+      }
+    },
+    "neutral/200": {
+      "value": "#C7C7CC",
+      "code": {
+        "web": "var(--suno-prim-neutral-200)",
+        "ios": "SunoPrimitive.primNeutral200",
+        "android": "sunoPrimNeutral200"
+      }
+    },
+    "neutral/300": {
+      "value": "#9A9A9E",
+      "code": {
+        "web": "var(--suno-prim-neutral-300)",
+        "ios": "SunoPrimitive.primNeutral300",
+        "android": "sunoPrimNeutral300"
+      }
+    },
+    "neutral/400": {
+      "value": "#6E6E73",
+      "code": {
+        "web": "var(--suno-prim-neutral-400)",
+        "ios": "SunoPrimitive.primNeutral400",
+        "android": "sunoPrimNeutral400"
+      }
+    },
+    "neutral/500": {
+      "value": "#48484A",
+      "code": {
+        "web": "var(--suno-prim-neutral-500)",
+        "ios": "SunoPrimitive.primNeutral500",
+        "android": "sunoPrimNeutral500"
+      }
+    },
+    "neutral/600": {
+      "value": "#3A3A3C",
+      "code": {
+        "web": "var(--suno-prim-neutral-600)",
+        "ios": "SunoPrimitive.primNeutral600",
+        "android": "sunoPrimNeutral600"
+      }
+    },
+    "neutral/700": {
+      "value": "#2C2C2E",
+      "code": {
+        "web": "var(--suno-prim-neutral-700)",
+        "ios": "SunoPrimitive.primNeutral700",
+        "android": "sunoPrimNeutral700"
+      }
+    },
+    "neutral/800": {
+      "value": "#1C1C1E",
+      "code": {
+        "web": "var(--suno-prim-neutral-800)",
+        "ios": "SunoPrimitive.primNeutral800",
+        "android": "sunoPrimNeutral800"
+      }
+    },
+    "neutral/850": {
+      "value": "#161618",
+      "code": {
+        "web": "var(--suno-prim-neutral-850)",
+        "ios": "SunoPrimitive.primNeutral850",
+        "android": "sunoPrimNeutral850"
+      }
+    },
+    "neutral/900": {
+      "value": "#101012",
+      "code": {
+        "web": "var(--suno-prim-neutral-900)",
+        "ios": "SunoPrimitive.primNeutral900",
+        "android": "sunoPrimNeutral900"
+      }
+    },
+    "neutral/950": {
+      "value": "#0A0A0B",
+      "code": {
+        "web": "var(--suno-prim-neutral-950)",
+        "ios": "SunoPrimitive.primNeutral950",
+        "android": "sunoPrimNeutral950"
+      }
+    },
+    "neutral/1000": {
+      "value": "#000000",
+      "code": {
+        "web": "var(--suno-prim-neutral-1000)",
+        "ios": "SunoPrimitive.primNeutral1000",
+        "android": "sunoPrimNeutral1000"
+      }
+    },
+    "brand/pink": {
+      "value": "#FF3670",
+      "code": {
+        "web": "var(--suno-prim-brand-pink)",
+        "ios": "SunoPrimitive.primBrandPink",
+        "android": "sunoPrimBrandPink"
+      }
+    },
+    "brand/orange": {
+      "value": "#FF4A22",
+      "code": {
+        "web": "var(--suno-prim-brand-orange)",
+        "ios": "SunoPrimitive.primBrandOrange",
+        "android": "sunoPrimBrandOrange"
+      }
+    },
+    "brand/amber": {
+      "value": "#FDA20A",
+      "code": {
+        "web": "var(--suno-prim-brand-amber)",
+        "ios": "SunoPrimitive.primBrandAmber",
+        "android": "sunoPrimBrandAmber"
+      }
+    },
+    "brand/magenta": {
+      "value": "#FF3E9A",
+      "code": {
+        "web": "var(--suno-prim-brand-magenta)",
+        "ios": "SunoPrimitive.primBrandMagenta",
+        "android": "sunoPrimBrandMagenta"
+      }
+    },
+    "brand/magenta-deep": {
+      "value": "#C4267A",
+      "code": {
+        "web": "var(--suno-prim-brand-magenta-deep)",
+        "ios": "SunoPrimitive.primBrandMagentaDeep",
+        "android": "sunoPrimBrandMagentaDeep"
+      }
+    },
+    "warm/950": {
+      "value": "#120E0B",
+      "code": {
+        "web": "var(--suno-prim-warm-950)",
+        "ios": "SunoPrimitive.primWarm950",
+        "android": "sunoPrimWarm950"
+      }
+    },
+    "warm/900": {
+      "value": "#1D1512",
+      "code": {
+        "web": "var(--suno-prim-warm-900)",
+        "ios": "SunoPrimitive.primWarm900",
+        "android": "sunoPrimWarm900"
+      }
+    },
+    "warm/800": {
+      "value": "#2A1E17",
+      "code": {
+        "web": "var(--suno-prim-warm-800)",
+        "ios": "SunoPrimitive.primWarm800",
+        "android": "sunoPrimWarm800"
+      }
+    },
+    "warm/700": {
+      "value": "#35231E",
+      "code": {
+        "web": "var(--suno-prim-warm-700)",
+        "ios": "SunoPrimitive.primWarm700",
+        "android": "sunoPrimWarm700"
+      }
+    },
+    "warm/600": {
+      "value": "#4A2E24",
+      "code": {
+        "web": "var(--suno-prim-warm-600)",
+        "ios": "SunoPrimitive.primWarm600",
+        "android": "sunoPrimWarm600"
+      }
+    },
+    "warm/500": {
+      "value": "#7A4A33",
+      "code": {
+        "web": "var(--suno-prim-warm-500)",
+        "ios": "SunoPrimitive.primWarm500",
+        "android": "sunoPrimWarm500"
+      }
+    },
+    "cover/orange-500": {
+      "value": "#DE6E48",
+      "code": {
+        "web": "var(--suno-prim-cover-orange-500)",
+        "ios": "SunoPrimitive.primCoverOrange500",
+        "android": "sunoPrimCoverOrange500"
+      }
+    },
+    "cover/orange-600": {
+      "value": "#CE623D",
+      "code": {
+        "web": "var(--suno-prim-cover-orange-600)",
+        "ios": "SunoPrimitive.primCoverOrange600",
+        "android": "sunoPrimCoverOrange600"
+      }
+    },
+    "cool/800": {
+      "value": "#0B1F5B",
+      "code": {
+        "web": "var(--suno-prim-cool-800)",
+        "ios": "SunoPrimitive.primCool800",
+        "android": "sunoPrimCool800"
+      }
+    },
+    "cool/950": {
+      "value": "#050B1F",
+      "code": {
+        "web": "var(--suno-prim-cool-950)",
+        "ios": "SunoPrimitive.primCool950",
+        "android": "sunoPrimCool950"
+      }
+    },
+    "system/blue": {
+      "value": "#0A84FF",
+      "code": {
+        "web": "var(--suno-prim-system-blue)",
+        "ios": "SunoPrimitive.primSystemBlue",
+        "android": "sunoPrimSystemBlue"
+      }
+    },
+    "system/green": {
+      "value": "#30D158",
+      "code": {
+        "web": "var(--suno-prim-system-green)",
+        "ios": "SunoPrimitive.primSystemGreen",
+        "android": "sunoPrimSystemGreen"
+      }
+    },
+    "system/red": {
+      "value": "#FF453A",
+      "code": {
+        "web": "var(--suno-prim-system-red)",
+        "ios": "SunoPrimitive.primSystemRed",
+        "android": "sunoPrimSystemRed"
+      }
+    },
+    "system/yellow": {
+      "value": "#FFD60A",
+      "code": {
+        "web": "var(--suno-prim-system-yellow)",
+        "ios": "SunoPrimitive.primSystemYellow",
+        "android": "sunoPrimSystemYellow"
+      }
+    },
+    "system/purple": {
+      "value": "#BF5AF2",
+      "code": {
+        "web": "var(--suno-prim-system-purple)",
+        "ios": "SunoPrimitive.primSystemPurple",
+        "android": "sunoPrimSystemPurple"
+      }
+    },
+    "system/teal": {
+      "value": "#64D2FF",
+      "code": {
+        "web": "var(--suno-prim-system-teal)",
+        "ios": "SunoPrimitive.primSystemTeal",
+        "android": "sunoPrimSystemTeal"
+      }
+    },
+    "alpha/white-4": {
+      "value": "#FFFFFF0A",
+      "code": {
+        "web": "var(--suno-prim-alpha-white-4)",
+        "ios": "SunoPrimitive.primAlphaWhite4",
+        "android": "sunoPrimAlphaWhite4"
+      }
+    },
+    "alpha/white-8": {
+      "value": "#FFFFFF14",
+      "code": {
+        "web": "var(--suno-prim-alpha-white-8)",
+        "ios": "SunoPrimitive.primAlphaWhite8",
+        "android": "sunoPrimAlphaWhite8"
+      }
+    },
+    "alpha/white-12": {
+      "value": "#FFFFFF1F",
+      "code": {
+        "web": "var(--suno-prim-alpha-white-12)",
+        "ios": "SunoPrimitive.primAlphaWhite12",
+        "android": "sunoPrimAlphaWhite12"
+      }
+    },
+    "alpha/white-16": {
+      "value": "#FFFFFF29",
+      "code": {
+        "web": "var(--suno-prim-alpha-white-16)",
+        "ios": "SunoPrimitive.primAlphaWhite16",
+        "android": "sunoPrimAlphaWhite16"
+      }
+    },
+    "alpha/white-24": {
+      "value": "#FFFFFF3D",
+      "code": {
+        "web": "var(--suno-prim-alpha-white-24)",
+        "ios": "SunoPrimitive.primAlphaWhite24",
+        "android": "sunoPrimAlphaWhite24"
+      }
+    },
+    "alpha/white-40": {
+      "value": "#FFFFFF66",
+      "code": {
+        "web": "var(--suno-prim-alpha-white-40)",
+        "ios": "SunoPrimitive.primAlphaWhite40",
+        "android": "sunoPrimAlphaWhite40"
+      }
+    },
+    "alpha/white-60": {
+      "value": "#FFFFFF99",
+      "code": {
+        "web": "var(--suno-prim-alpha-white-60)",
+        "ios": "SunoPrimitive.primAlphaWhite60",
+        "android": "sunoPrimAlphaWhite60"
+      }
+    },
+    "alpha/black-8": {
+      "value": "#00000014",
+      "code": {
+        "web": "var(--suno-prim-alpha-black-8)",
+        "ios": "SunoPrimitive.primAlphaBlack8",
+        "android": "sunoPrimAlphaBlack8"
+      }
+    },
+    "alpha/black-12": {
+      "value": "#0000001F",
+      "code": {
+        "web": "var(--suno-prim-alpha-black-12)",
+        "ios": "SunoPrimitive.primAlphaBlack12",
+        "android": "sunoPrimAlphaBlack12"
+      }
+    },
+    "alpha/black-24": {
+      "value": "#0000003D",
+      "code": {
+        "web": "var(--suno-prim-alpha-black-24)",
+        "ios": "SunoPrimitive.primAlphaBlack24",
+        "android": "sunoPrimAlphaBlack24"
+      }
+    },
+    "alpha/black-40": {
+      "value": "#00000066",
+      "code": {
+        "web": "var(--suno-prim-alpha-black-40)",
+        "ios": "SunoPrimitive.primAlphaBlack40",
+        "android": "sunoPrimAlphaBlack40"
+      }
+    },
+    "alpha/black-60": {
+      "value": "#00000099",
+      "code": {
+        "web": "var(--suno-prim-alpha-black-60)",
+        "ios": "SunoPrimitive.primAlphaBlack60",
+        "android": "sunoPrimAlphaBlack60"
+      }
+    },
+    "alpha/black-80": {
+      "value": "#000000CC",
+      "code": {
+        "web": "var(--suno-prim-alpha-black-80)",
+        "ios": "SunoPrimitive.primAlphaBlack80",
+        "android": "sunoPrimAlphaBlack80"
+      }
+    },
+    "alpha/magenta-16": {
+      "value": "#FF3E9A29",
+      "code": {
+        "web": "var(--suno-prim-alpha-magenta-16)",
+        "ios": "SunoPrimitive.primAlphaMagenta16",
+        "android": "sunoPrimAlphaMagenta16"
+      }
+    },
+    "alpha/magenta-32": {
+      "value": "#FF3E9A52",
+      "code": {
+        "web": "var(--suno-prim-alpha-magenta-32)",
+        "ios": "SunoPrimitive.primAlphaMagenta32",
+        "android": "sunoPrimAlphaMagenta32"
+      }
+    }
+  },
+  "02 Semantic Color": {
+    "bg/canvas": {
+      "dark": {
+        "alias": "neutral/900",
+        "value": "#101012"
+      },
+      "light": {
+        "alias": "neutral/50",
+        "value": "#F7F5F0"
+      },
+      "description": "화면 기본 배경 (Library·Home·Settings)",
+      "code": {
+        "web": "var(--suno-bg-canvas)",
+        "ios": "SunoColor.bgCanvas",
+        "android": "sunoBgCanvas"
+      }
+    },
+    "bg/canvas-warm": {
+      "dark": {
+        "alias": "warm/800",
+        "value": "#2A1E17"
+      },
+      "light": {
+        "alias": "neutral/50",
+        "value": "#F7F5F0"
+      },
+      "description": "따뜻한 그라데이션 배경의 중간톤 (Create·Player·Auth)",
+      "code": {
+        "web": "var(--suno-bg-canvas-warm)",
+        "ios": "SunoColor.bgCanvasWarm",
+        "android": "sunoBgCanvasWarm"
+      }
+    },
+    "bg/surface-1": {
+      "dark": {
+        "alias": "neutral/850",
+        "value": "#161618"
+      },
+      "light": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "description": "한 단계 띄운 면: 카드·탭 활성 필",
+      "code": {
+        "web": "var(--suno-bg-surface-1)",
+        "ios": "SunoColor.bgSurface1",
+        "android": "sunoBgSurface1"
+      }
+    },
+    "bg/surface-2": {
+      "dark": {
+        "alias": "neutral/800",
+        "value": "#1C1C1E"
+      },
+      "light": {
+        "alias": "neutral/100",
+        "value": "#E5E5EA"
+      },
+      "description": "그룹 리스트 컨테이너·아이콘 버튼 기본",
+      "code": {
+        "web": "var(--suno-bg-surface-2)",
+        "ios": "SunoColor.bgSurface2",
+        "android": "sunoBgSurface2"
+      }
+    },
+    "bg/surface-3": {
+      "dark": {
+        "alias": "neutral/700",
+        "value": "#2C2C2E"
+      },
+      "light": {
+        "alias": "neutral/200",
+        "value": "#C7C7CC"
+      },
+      "description": "칩·눌림·세그먼트 선택",
+      "code": {
+        "web": "var(--suno-bg-surface-3)",
+        "ios": "SunoColor.bgSurface3",
+        "android": "sunoBgSurface3"
+      }
+    },
+    "bg/glass": {
+      "dark": {
+        "alias": "alpha/white-8",
+        "value": "#FFFFFF14"
+      },
+      "light": {
+        "alias": "alpha/black-8",
+        "value": "#00000014"
+      },
+      "description": "반투명 유리 면 + Glass 이펙트와 함께",
+      "code": {
+        "web": "var(--suno-bg-glass)",
+        "ios": "SunoColor.bgGlass",
+        "android": "sunoBgGlass"
+      }
+    },
+    "bg/glass-strong": {
+      "dark": {
+        "alias": "alpha/white-12",
+        "value": "#FFFFFF1F"
+      },
+      "light": {
+        "alias": "alpha/black-12",
+        "value": "#0000001F"
+      },
+      "description": "강조 유리 면 (툴바 버튼)",
+      "code": {
+        "web": "var(--suno-bg-glass-strong)",
+        "ios": "SunoColor.bgGlassStrong",
+        "android": "sunoBgGlassStrong"
+      }
+    },
+    "bg/control": {
+      "dark": {
+        "alias": "neutral/800",
+        "value": "#1C1C1E"
+      },
+      "light": {
+        "alias": "neutral/100",
+        "value": "#E5E5EA"
+      },
+      "description": "아이콘 원형 버튼·입력 필드 배경",
+      "code": {
+        "web": "var(--suno-bg-control)",
+        "ios": "SunoColor.bgControl",
+        "android": "sunoBgControl"
+      }
+    },
+    "bg/control-pressed": {
+      "dark": {
+        "alias": "neutral/700",
+        "value": "#2C2C2E"
+      },
+      "light": {
+        "alias": "neutral/200",
+        "value": "#C7C7CC"
+      },
+      "description": "아이콘 버튼 눌림",
+      "code": {
+        "web": "var(--suno-bg-control-pressed)",
+        "ios": "SunoColor.bgControlPressed",
+        "android": "sunoBgControlPressed"
+      }
+    },
+    "bg/tab-bar": {
+      "dark": {
+        "alias": "neutral/900",
+        "value": "#101012"
+      },
+      "light": {
+        "alias": "neutral/50",
+        "value": "#F7F5F0"
+      },
+      "description": "하단 탭바 배경",
+      "code": {
+        "web": "var(--suno-bg-tab-bar)",
+        "ios": "SunoColor.bgTabBar",
+        "android": "sunoBgTabBar"
+      }
+    },
+    "bg/tab-active": {
+      "dark": {
+        "alias": "neutral/850",
+        "value": "#161618"
+      },
+      "light": {
+        "alias": "neutral/100",
+        "value": "#E5E5EA"
+      },
+      "description": "하단 탭바 활성 캡슐",
+      "code": {
+        "web": "var(--suno-bg-tab-active)",
+        "ios": "SunoColor.bgTabActive",
+        "android": "sunoBgTabActive"
+      }
+    },
+    "bg/inverse": {
+      "dark": {
+        "alias": "neutral/50",
+        "value": "#F7F5F0"
+      },
+      "light": {
+        "alias": "neutral/900",
+        "value": "#101012"
+      },
+      "description": "밝은 1차 버튼·토스트",
+      "code": {
+        "web": "var(--suno-bg-inverse)",
+        "ios": "SunoColor.bgInverse",
+        "android": "sunoBgInverse"
+      }
+    },
+    "bg/overlay": {
+      "dark": {
+        "alias": "alpha/black-60",
+        "value": "#00000099"
+      },
+      "light": {
+        "alias": "alpha/black-40",
+        "value": "#00000066"
+      },
+      "description": "시트/다이얼로그 스크림",
+      "code": {
+        "web": "var(--suno-bg-overlay)",
+        "ios": "SunoColor.bgOverlay",
+        "android": "sunoBgOverlay"
+      }
+    },
+    "bg/accent": {
+      "dark": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "light": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "description": "미니 FAB·배지 배경",
+      "code": {
+        "web": "var(--suno-bg-accent)",
+        "ios": "SunoColor.bgAccent",
+        "android": "sunoBgAccent"
+      }
+    },
+    "bg/accent-subtle": {
+      "dark": {
+        "alias": "alpha/magenta-16",
+        "value": "#FF3E9A29"
+      },
+      "light": {
+        "alias": "alpha/magenta-16",
+        "value": "#FF3E9A29"
+      },
+      "description": "핑크 강조의 연한 배경",
+      "code": {
+        "web": "var(--suno-bg-accent-subtle)",
+        "ios": "SunoColor.bgAccentSubtle",
+        "android": "sunoBgAccentSubtle"
+      }
+    },
+    "bg/destructive-subtle": {
+      "dark": {
+        "alias": "alpha/white-8",
+        "value": "#FFFFFF14"
+      },
+      "light": {
+        "alias": "alpha/black-8",
+        "value": "#00000014"
+      },
+      "description": "위험 액션 버튼 배경",
+      "code": {
+        "web": "var(--suno-bg-destructive-subtle)",
+        "ios": "SunoColor.bgDestructiveSubtle",
+        "android": "sunoBgDestructiveSubtle"
+      }
+    },
+    "bg/skeleton": {
+      "dark": {
+        "alias": "neutral/700",
+        "value": "#2C2C2E"
+      },
+      "light": {
+        "alias": "neutral/200",
+        "value": "#C7C7CC"
+      },
+      "description": "스켈레톤 로딩",
+      "code": {
+        "web": "var(--suno-bg-skeleton)",
+        "ios": "SunoColor.bgSkeleton",
+        "android": "sunoBgSkeleton"
+      }
+    },
+    "fg/primary": {
+      "dark": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "light": {
+        "alias": "neutral/900",
+        "value": "#101012"
+      },
+      "description": "1차 텍스트",
+      "code": {
+        "web": "var(--suno-fg-primary)",
+        "ios": "SunoColor.fgPrimary",
+        "android": "sunoFgPrimary"
+      }
+    },
+    "fg/secondary": {
+      "dark": {
+        "alias": "neutral/300",
+        "value": "#9A9A9E"
+      },
+      "light": {
+        "alias": "neutral/400",
+        "value": "#6E6E73"
+      },
+      "description": "2차 텍스트",
+      "code": {
+        "web": "var(--suno-fg-secondary)",
+        "ios": "SunoColor.fgSecondary",
+        "android": "sunoFgSecondary"
+      }
+    },
+    "fg/tertiary": {
+      "dark": {
+        "alias": "neutral/400",
+        "value": "#6E6E73"
+      },
+      "light": {
+        "alias": "neutral/300",
+        "value": "#9A9A9E"
+      },
+      "description": "3차 텍스트·플레이스홀더",
+      "code": {
+        "web": "var(--suno-fg-tertiary)",
+        "ios": "SunoColor.fgTertiary",
+        "android": "sunoFgTertiary"
+      }
+    },
+    "fg/disabled": {
+      "dark": {
+        "alias": "neutral/500",
+        "value": "#48484A"
+      },
+      "light": {
+        "alias": "neutral/200",
+        "value": "#C7C7CC"
+      },
+      "description": "비활성 텍스트",
+      "code": {
+        "web": "var(--suno-fg-disabled)",
+        "ios": "SunoColor.fgDisabled",
+        "android": "sunoFgDisabled"
+      }
+    },
+    "fg/inverse": {
+      "dark": {
+        "alias": "neutral/900",
+        "value": "#101012"
+      },
+      "light": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "description": "밝은 배경 위 텍스트",
+      "code": {
+        "web": "var(--suno-fg-inverse)",
+        "ios": "SunoColor.fgInverse",
+        "android": "sunoFgInverse"
+      }
+    },
+    "fg/on-brand": {
+      "dark": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "light": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "description": "그라데이션/핑크 위 텍스트",
+      "code": {
+        "web": "var(--suno-fg-on-brand)",
+        "ios": "SunoColor.fgOnBrand",
+        "android": "sunoFgOnBrand"
+      }
+    },
+    "fg/accent": {
+      "dark": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "light": {
+        "alias": "brand/magenta-deep",
+        "value": "#C4267A"
+      },
+      "description": "재생 중 제목·V6 PREVIEW",
+      "code": {
+        "web": "var(--suno-fg-accent)",
+        "ios": "SunoColor.fgAccent",
+        "android": "sunoFgAccent"
+      }
+    },
+    "fg/link": {
+      "dark": {
+        "alias": "system/blue",
+        "value": "#0A84FF"
+      },
+      "light": {
+        "alias": "system/blue",
+        "value": "#0A84FF"
+      },
+      "description": "국가 코드·시스템 링크",
+      "code": {
+        "web": "var(--suno-fg-link)",
+        "ios": "SunoColor.fgLink",
+        "android": "sunoFgLink"
+      }
+    },
+    "fg/destructive": {
+      "dark": {
+        "alias": "system/red",
+        "value": "#FF453A"
+      },
+      "light": {
+        "alias": "system/red",
+        "value": "#FF453A"
+      },
+      "description": "Log out·Delete·Report",
+      "code": {
+        "web": "var(--suno-fg-destructive)",
+        "ios": "SunoColor.fgDestructive",
+        "android": "sunoFgDestructive"
+      }
+    },
+    "fg/success": {
+      "dark": {
+        "alias": "system/green",
+        "value": "#30D158"
+      },
+      "light": {
+        "alias": "system/green",
+        "value": "#30D158"
+      },
+      "description": "Most Popular",
+      "code": {
+        "web": "var(--suno-fg-success)",
+        "ios": "SunoColor.fgSuccess",
+        "android": "sunoFgSuccess"
+      }
+    },
+    "fg/warning": {
+      "dark": {
+        "alias": "system/yellow",
+        "value": "#FFD60A"
+      },
+      "light": {
+        "alias": "system/yellow",
+        "value": "#FFD60A"
+      },
+      "description": "Best Value",
+      "code": {
+        "web": "var(--suno-fg-warning)",
+        "ios": "SunoColor.fgWarning",
+        "android": "sunoFgWarning"
+      }
+    },
+    "icon/primary": {
+      "dark": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "light": {
+        "alias": "neutral/900",
+        "value": "#101012"
+      },
+      "description": "활성 아이콘",
+      "code": {
+        "web": "var(--suno-icon-primary)",
+        "ios": "SunoColor.iconPrimary",
+        "android": "sunoIconPrimary"
+      }
+    },
+    "icon/secondary": {
+      "dark": {
+        "alias": "neutral/300",
+        "value": "#9A9A9E"
+      },
+      "light": {
+        "alias": "neutral/400",
+        "value": "#6E6E73"
+      },
+      "description": "보조 아이콘",
+      "code": {
+        "web": "var(--suno-icon-secondary)",
+        "ios": "SunoColor.iconSecondary",
+        "android": "sunoIconSecondary"
+      }
+    },
+    "icon/inactive": {
+      "dark": {
+        "alias": "neutral/400",
+        "value": "#6E6E73"
+      },
+      "light": {
+        "alias": "neutral/300",
+        "value": "#9A9A9E"
+      },
+      "description": "탭바 비활성 아이콘",
+      "code": {
+        "web": "var(--suno-icon-inactive)",
+        "ios": "SunoColor.iconInactive",
+        "android": "sunoIconInactive"
+      }
+    },
+    "icon/accent": {
+      "dark": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "light": {
+        "alias": "brand/magenta-deep",
+        "value": "#C4267A"
+      },
+      "description": "강조 아이콘",
+      "code": {
+        "web": "var(--suno-icon-accent)",
+        "ios": "SunoColor.iconAccent",
+        "android": "sunoIconAccent"
+      }
+    },
+    "icon/inverse": {
+      "dark": {
+        "alias": "neutral/900",
+        "value": "#101012"
+      },
+      "light": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "description": "밝은 배경 위 아이콘",
+      "code": {
+        "web": "var(--suno-icon-inverse)",
+        "ios": "SunoColor.iconInverse",
+        "android": "sunoIconInverse"
+      }
+    },
+    "border/subtle": {
+      "dark": {
+        "alias": "alpha/white-8",
+        "value": "#FFFFFF14"
+      },
+      "light": {
+        "alias": "alpha/black-8",
+        "value": "#00000014"
+      },
+      "description": "리스트 구분선",
+      "code": {
+        "web": "var(--suno-border-subtle)",
+        "ios": "SunoColor.borderSubtle",
+        "android": "sunoBorderSubtle"
+      }
+    },
+    "border/default": {
+      "dark": {
+        "alias": "alpha/white-12",
+        "value": "#FFFFFF1F"
+      },
+      "light": {
+        "alias": "alpha/black-12",
+        "value": "#0000001F"
+      },
+      "description": "유리 버튼·칩 외곽선",
+      "code": {
+        "web": "var(--suno-border-default)",
+        "ios": "SunoColor.borderDefault",
+        "android": "sunoBorderDefault"
+      }
+    },
+    "border/strong": {
+      "dark": {
+        "alias": "alpha/white-24",
+        "value": "#FFFFFF3D"
+      },
+      "light": {
+        "alias": "alpha/black-24",
+        "value": "#0000003D"
+      },
+      "description": "아웃라인 버튼",
+      "code": {
+        "web": "var(--suno-border-strong)",
+        "ios": "SunoColor.borderStrong",
+        "android": "sunoBorderStrong"
+      }
+    },
+    "border/brand": {
+      "dark": {
+        "alias": "brand/orange",
+        "value": "#FF4A22"
+      },
+      "light": {
+        "alias": "brand/orange",
+        "value": "#FF4A22"
+      },
+      "description": "선택된 요금제 카드",
+      "code": {
+        "web": "var(--suno-border-brand)",
+        "ios": "SunoColor.borderBrand",
+        "android": "sunoBorderBrand"
+      }
+    },
+    "border/focus": {
+      "dark": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "light": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "description": "포커스·커서",
+      "code": {
+        "web": "var(--suno-border-focus)",
+        "ios": "SunoColor.borderFocus",
+        "android": "sunoBorderFocus"
+      }
+    },
+    "brand/pink": {
+      "dark": {
+        "alias": "brand/pink",
+        "value": "#FF3670"
+      },
+      "light": {
+        "alias": "brand/pink",
+        "value": "#FF3670"
+      },
+      "description": "브랜드 그라데이션 1",
+      "code": {
+        "web": "var(--suno-brand-pink)",
+        "ios": "SunoColor.brandPink",
+        "android": "sunoBrandPink"
+      }
+    },
+    "brand/orange": {
+      "dark": {
+        "alias": "brand/orange",
+        "value": "#FF4A22"
+      },
+      "light": {
+        "alias": "brand/orange",
+        "value": "#FF4A22"
+      },
+      "description": "브랜드 그라데이션 2",
+      "code": {
+        "web": "var(--suno-brand-orange)",
+        "ios": "SunoColor.brandOrange",
+        "android": "sunoBrandOrange"
+      }
+    },
+    "brand/amber": {
+      "dark": {
+        "alias": "brand/amber",
+        "value": "#FDA20A"
+      },
+      "light": {
+        "alias": "brand/amber",
+        "value": "#FDA20A"
+      },
+      "description": "브랜드 그라데이션 3",
+      "code": {
+        "web": "var(--suno-brand-amber)",
+        "ios": "SunoColor.brandAmber",
+        "android": "sunoBrandAmber"
+      }
+    },
+    "brand/magenta": {
+      "dark": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "light": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "description": "UI 강조 핑크",
+      "code": {
+        "web": "var(--suno-brand-magenta)",
+        "ios": "SunoColor.brandMagenta",
+        "android": "sunoBrandMagenta"
+      }
+    },
+    "control/toggle-on": {
+      "dark": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "light": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "description": "토글 ON",
+      "code": {
+        "web": "var(--suno-control-toggle-on)",
+        "ios": "SunoColor.controlToggleOn",
+        "android": "sunoControlToggleOn"
+      }
+    },
+    "control/toggle-off": {
+      "dark": {
+        "alias": "neutral/600",
+        "value": "#3A3A3C"
+      },
+      "light": {
+        "alias": "neutral/200",
+        "value": "#C7C7CC"
+      },
+      "description": "토글 OFF",
+      "code": {
+        "web": "var(--suno-control-toggle-off)",
+        "ios": "SunoColor.controlToggleOff",
+        "android": "sunoControlToggleOff"
+      }
+    },
+    "control/knob": {
+      "dark": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "light": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "description": "토글 손잡이",
+      "code": {
+        "web": "var(--suno-control-knob)",
+        "ios": "SunoColor.controlKnob",
+        "android": "sunoControlKnob"
+      }
+    },
+    "control/track": {
+      "dark": {
+        "alias": "neutral/600",
+        "value": "#3A3A3C"
+      },
+      "light": {
+        "alias": "neutral/200",
+        "value": "#C7C7CC"
+      },
+      "description": "슬라이더·진행바 트랙",
+      "code": {
+        "web": "var(--suno-control-track)",
+        "ios": "SunoColor.controlTrack",
+        "android": "sunoControlTrack"
+      }
+    },
+    "control/fill": {
+      "dark": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "light": {
+        "alias": "brand/magenta",
+        "value": "#FF3E9A"
+      },
+      "description": "슬라이더 채움",
+      "code": {
+        "web": "var(--suno-control-fill)",
+        "ios": "SunoColor.controlFill",
+        "android": "sunoControlFill"
+      }
+    },
+    "control/progress": {
+      "dark": {
+        "alias": "neutral/0",
+        "value": "#FFFFFF"
+      },
+      "light": {
+        "alias": "neutral/900",
+        "value": "#101012"
+      },
+      "description": "재생 진행 채움",
+      "code": {
+        "web": "var(--suno-control-progress)",
+        "ios": "SunoColor.controlProgress",
+        "android": "sunoControlProgress"
+      }
+    },
+    "gradient/warm-top": {
+      "dark": {
+        "alias": "warm/900",
+        "value": "#1D1512"
+      },
+      "light": {
+        "alias": "neutral/50",
+        "value": "#F7F5F0"
+      },
+      "description": "따뜻한 배경 상단",
+      "code": {
+        "web": "var(--suno-gradient-warm-top)",
+        "ios": "SunoColor.gradientWarmTop",
+        "android": "sunoGradientWarmTop"
+      }
+    },
+    "gradient/warm-mid": {
+      "dark": {
+        "alias": "warm/700",
+        "value": "#35231E"
+      },
+      "light": {
+        "alias": "neutral/100",
+        "value": "#E5E5EA"
+      },
+      "description": "따뜻한 배경 중간",
+      "code": {
+        "web": "var(--suno-gradient-warm-mid)",
+        "ios": "SunoColor.gradientWarmMid",
+        "android": "sunoGradientWarmMid"
+      }
+    },
+    "gradient/warm-bottom": {
+      "dark": {
+        "alias": "warm/950",
+        "value": "#120E0B"
+      },
+      "light": {
+        "alias": "neutral/50",
+        "value": "#F7F5F0"
+      },
+      "description": "따뜻한 배경 하단",
+      "code": {
+        "web": "var(--suno-gradient-warm-bottom)",
+        "ios": "SunoColor.gradientWarmBottom",
+        "android": "sunoGradientWarmBottom"
+      }
+    },
+    "gradient/cover": {
+      "dark": {
+        "alias": "cover/orange-500",
+        "value": "#DE6E48"
+      },
+      "light": {
+        "alias": "cover/orange-500",
+        "value": "#DE6E48"
+      },
+      "description": "프로필 커버 상단",
+      "code": {
+        "web": "var(--suno-gradient-cover)",
+        "ios": "SunoColor.gradientCover",
+        "android": "sunoGradientCover"
+      }
+    },
+    "gradient/cool-top": {
+      "dark": {
+        "alias": "cool/800",
+        "value": "#0B1F5B"
+      },
+      "light": {
+        "alias": "neutral/100",
+        "value": "#E5E5EA"
+      },
+      "description": "차가운 파랑 상단 (Hooks)",
+      "code": {
+        "web": "var(--suno-gradient-cool-top)",
+        "ios": "SunoColor.gradientCoolTop",
+        "android": "sunoGradientCoolTop"
+      }
+    },
+    "gradient/cool-bottom": {
+      "dark": {
+        "alias": "cool/950",
+        "value": "#050B1F"
+      },
+      "light": {
+        "alias": "neutral/50",
+        "value": "#F7F5F0"
+      },
+      "description": "차가운 파랑 하단",
+      "code": {
+        "web": "var(--suno-gradient-cool-bottom)",
+        "ios": "SunoColor.gradientCoolBottom",
+        "android": "sunoGradientCoolBottom"
+      }
+    },
+    "shadow/default": {
+      "dark": {
+        "alias": "alpha/black-40",
+        "value": "#00000066"
+      },
+      "light": {
+        "alias": "alpha/black-12",
+        "value": "#0000001F"
+      },
+      "description": "그림자 색",
+      "code": {
+        "web": "var(--suno-shadow-default)",
+        "ios": "SunoColor.shadowDefault",
+        "android": "sunoShadowDefault"
+      }
+    },
+    "shadow/strong": {
+      "dark": {
+        "alias": "alpha/black-60",
+        "value": "#00000099"
+      },
+      "light": {
+        "alias": "alpha/black-24",
+        "value": "#0000003D"
+      },
+      "description": "시트·토스트 그림자",
+      "code": {
+        "web": "var(--suno-shadow-strong)",
+        "ios": "SunoColor.shadowStrong",
+        "android": "sunoShadowStrong"
+      }
+    },
+    "shadow/brand-glow": {
+      "dark": {
+        "alias": "alpha/magenta-32",
+        "value": "#FF3E9A52"
+      },
+      "light": {
+        "alias": "alpha/magenta-32",
+        "value": "#FF3E9A52"
+      },
+      "description": "FAB 글로우",
+      "code": {
+        "web": "var(--suno-shadow-brand-glow)",
+        "ios": "SunoColor.shadowBrandGlow",
+        "android": "sunoShadowBrandGlow"
+      }
+    },
+    "highlight/glass": {
+      "dark": {
+        "alias": "alpha/white-12",
+        "value": "#FFFFFF1F"
+      },
+      "light": {
+        "alias": "alpha/white-60",
+        "value": "#FFFFFF99"
+      },
+      "description": "유리 상단 하이라이트",
+      "code": {
+        "web": "var(--suno-highlight-glass)",
+        "ios": "SunoColor.highlightGlass",
+        "android": "sunoHighlightGlass"
+      }
+    }
+  },
+  "03 Spacing": {
+    "space/0": {
+      "value": 0,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-0)",
+        "ios": "SunoSpacing.s0",
+        "android": "sunoSpace0"
+      }
+    },
+    "space/2": {
+      "value": 2,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-2)",
+        "ios": "SunoSpacing.s2",
+        "android": "sunoSpace2"
+      }
+    },
+    "space/4": {
+      "value": 4,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-4)",
+        "ios": "SunoSpacing.s4",
+        "android": "sunoSpace4"
+      }
+    },
+    "space/6": {
+      "value": 6,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-6)",
+        "ios": "SunoSpacing.s6",
+        "android": "sunoSpace6"
+      }
+    },
+    "space/8": {
+      "value": 8,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-8)",
+        "ios": "SunoSpacing.s8",
+        "android": "sunoSpace8"
+      }
+    },
+    "space/10": {
+      "value": 10,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-10)",
+        "ios": "SunoSpacing.s10",
+        "android": "sunoSpace10"
+      }
+    },
+    "space/12": {
+      "value": 12,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-12)",
+        "ios": "SunoSpacing.s12",
+        "android": "sunoSpace12"
+      }
+    },
+    "space/16": {
+      "value": 16,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-16)",
+        "ios": "SunoSpacing.s16",
+        "android": "sunoSpace16"
+      }
+    },
+    "space/20": {
+      "value": 20,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-20)",
+        "ios": "SunoSpacing.s20",
+        "android": "sunoSpace20"
+      }
+    },
+    "space/24": {
+      "value": 24,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-24)",
+        "ios": "SunoSpacing.s24",
+        "android": "sunoSpace24"
+      }
+    },
+    "space/32": {
+      "value": 32,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-32)",
+        "ios": "SunoSpacing.s32",
+        "android": "sunoSpace32"
+      }
+    },
+    "space/40": {
+      "value": 40,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-40)",
+        "ios": "SunoSpacing.s40",
+        "android": "sunoSpace40"
+      }
+    },
+    "space/48": {
+      "value": 48,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-48)",
+        "ios": "SunoSpacing.s48",
+        "android": "sunoSpace48"
+      }
+    },
+    "space/64": {
+      "value": 64,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-space-64)",
+        "ios": "SunoSpacing.s64",
+        "android": "sunoSpace64"
+      }
+    }
+  },
+  "04 Radius": {
+    "radius/none": {
+      "value": 0,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-radius-none)",
+        "ios": "SunoRadius.radiusNone",
+        "android": "sunoRadiusNone"
+      }
+    },
+    "radius/xs": {
+      "value": 4,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-radius-xs)",
+        "ios": "SunoRadius.radiusXs",
+        "android": "sunoRadiusXs"
+      }
+    },
+    "radius/sm": {
+      "value": 8,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-radius-sm)",
+        "ios": "SunoRadius.radiusSm",
+        "android": "sunoRadiusSm"
+      }
+    },
+    "radius/md": {
+      "value": 12,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-radius-md)",
+        "ios": "SunoRadius.radiusMd",
+        "android": "sunoRadiusMd"
+      }
+    },
+    "radius/lg": {
+      "value": 16,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-radius-lg)",
+        "ios": "SunoRadius.radiusLg",
+        "android": "sunoRadiusLg"
+      }
+    },
+    "radius/xl": {
+      "value": 20,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-radius-xl)",
+        "ios": "SunoRadius.radiusXl",
+        "android": "sunoRadiusXl"
+      }
+    },
+    "radius/2xl": {
+      "value": 24,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-radius-2xl)",
+        "ios": "SunoRadius.radius2xl",
+        "android": "sunoRadius2xl"
+      }
+    },
+    "radius/3xl": {
+      "value": 32,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-radius-3xl)",
+        "ios": "SunoRadius.radius3xl",
+        "android": "sunoRadius3xl"
+      }
+    },
+    "radius/full": {
+      "value": 999,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-radius-full)",
+        "ios": "SunoRadius.radiusFull",
+        "android": "sunoRadiusFull"
+      }
+    }
+  },
+  "05 Size": {
+    "icon/xs": {
+      "value": 16,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-icon-xs)",
+        "ios": "SunoSize.iconXs",
+        "android": "sunoIconXs"
+      }
+    },
+    "icon/sm": {
+      "value": 20,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-icon-sm)",
+        "ios": "SunoSize.iconSm",
+        "android": "sunoIconSm"
+      }
+    },
+    "icon/md": {
+      "value": 24,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-icon-md)",
+        "ios": "SunoSize.iconMd",
+        "android": "sunoIconMd"
+      }
+    },
+    "icon/lg": {
+      "value": 28,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-icon-lg)",
+        "ios": "SunoSize.iconLg",
+        "android": "sunoIconLg"
+      }
+    },
+    "icon/xl": {
+      "value": 32,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-icon-xl)",
+        "ios": "SunoSize.iconXl",
+        "android": "sunoIconXl"
+      }
+    },
+    "control/xs": {
+      "value": 28,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-control-xs)",
+        "ios": "SunoSize.controlXs",
+        "android": "sunoControlXs"
+      }
+    },
+    "control/sm": {
+      "value": 32,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-control-sm)",
+        "ios": "SunoSize.controlSm",
+        "android": "sunoControlSm"
+      }
+    },
+    "control/md": {
+      "value": 36,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-control-md)",
+        "ios": "SunoSize.controlMd",
+        "android": "sunoControlMd"
+      }
+    },
+    "control/lg": {
+      "value": 44,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-control-lg)",
+        "ios": "SunoSize.controlLg",
+        "android": "sunoControlLg"
+      }
+    },
+    "control/xl": {
+      "value": 52,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-control-xl)",
+        "ios": "SunoSize.controlXl",
+        "android": "sunoControlXl"
+      }
+    },
+    "control/2xl": {
+      "value": 56,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-control-2xl)",
+        "ios": "SunoSize.control2xl",
+        "android": "sunoControl2xl"
+      }
+    },
+    "avatar/xs": {
+      "value": 24,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-avatar-xs)",
+        "ios": "SunoSize.avatarXs",
+        "android": "sunoAvatarXs"
+      }
+    },
+    "avatar/sm": {
+      "value": 28,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-avatar-sm)",
+        "ios": "SunoSize.avatarSm",
+        "android": "sunoAvatarSm"
+      }
+    },
+    "avatar/md": {
+      "value": 40,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-avatar-md)",
+        "ios": "SunoSize.avatarMd",
+        "android": "sunoAvatarMd"
+      }
+    },
+    "avatar/lg": {
+      "value": 48,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-avatar-lg)",
+        "ios": "SunoSize.avatarLg",
+        "android": "sunoAvatarLg"
+      }
+    },
+    "avatar/xl": {
+      "value": 64,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-avatar-xl)",
+        "ios": "SunoSize.avatarXl",
+        "android": "sunoAvatarXl"
+      }
+    },
+    "avatar/2xl": {
+      "value": 80,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-avatar-2xl)",
+        "ios": "SunoSize.avatar2xl",
+        "android": "sunoAvatar2xl"
+      }
+    },
+    "thumb/sm": {
+      "value": 44,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-thumb-sm)",
+        "ios": "SunoSize.thumbSm",
+        "android": "sunoThumbSm"
+      }
+    },
+    "thumb/md": {
+      "value": 48,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-thumb-md)",
+        "ios": "SunoSize.thumbMd",
+        "android": "sunoThumbMd"
+      }
+    },
+    "thumb/lg": {
+      "value": 56,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-thumb-lg)",
+        "ios": "SunoSize.thumbLg",
+        "android": "sunoThumbLg"
+      }
+    },
+    "thumb/xl": {
+      "value": 120,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-thumb-xl)",
+        "ios": "SunoSize.thumbXl",
+        "android": "sunoThumbXl"
+      }
+    },
+    "layout/screen-width": {
+      "value": 402,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-screen-width)",
+        "ios": "SunoSize.layoutScreenWidth",
+        "android": "sunoLayoutScreenWidth"
+      }
+    },
+    "layout/screen-height": {
+      "value": 874,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-screen-height)",
+        "ios": "SunoSize.layoutScreenHeight",
+        "android": "sunoLayoutScreenHeight"
+      }
+    },
+    "layout/status-bar": {
+      "value": 62,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-status-bar)",
+        "ios": "SunoSize.layoutStatusBar",
+        "android": "sunoLayoutStatusBar"
+      }
+    },
+    "layout/top-bar": {
+      "value": 54,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-top-bar)",
+        "ios": "SunoSize.layoutTopBar",
+        "android": "sunoLayoutTopBar"
+      }
+    },
+    "layout/tab-bar": {
+      "value": 49,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-tab-bar)",
+        "ios": "SunoSize.layoutTabBar",
+        "android": "sunoLayoutTabBar"
+      }
+    },
+    "layout/home-indicator": {
+      "value": 34,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-home-indicator)",
+        "ios": "SunoSize.layoutHomeIndicator",
+        "android": "sunoLayoutHomeIndicator"
+      }
+    },
+    "layout/tab-bar-total": {
+      "value": 83,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-tab-bar-total)",
+        "ios": "SunoSize.layoutTabBarTotal",
+        "android": "sunoLayoutTabBarTotal"
+      }
+    },
+    "layout/mini-player": {
+      "value": 64,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-mini-player)",
+        "ios": "SunoSize.layoutMiniPlayer",
+        "android": "sunoLayoutMiniPlayer"
+      }
+    },
+    "layout/margin": {
+      "value": 16,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-margin)",
+        "ios": "SunoSize.layoutMargin",
+        "android": "sunoLayoutMargin"
+      }
+    },
+    "layout/gutter": {
+      "value": 12,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-gutter)",
+        "ios": "SunoSize.layoutGutter",
+        "android": "sunoLayoutGutter"
+      }
+    },
+    "layout/content-width": {
+      "value": 370,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-content-width)",
+        "ios": "SunoSize.layoutContentWidth",
+        "android": "sunoLayoutContentWidth"
+      }
+    },
+    "layout/touch-min": {
+      "value": 44,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-touch-min)",
+        "ios": "SunoSize.layoutTouchMin",
+        "android": "sunoLayoutTouchMin"
+      }
+    },
+    "layout/fab-height": {
+      "value": 56,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-fab-height)",
+        "ios": "SunoSize.layoutFabHeight",
+        "android": "sunoLayoutFabHeight"
+      }
+    },
+    "layout/cta-height": {
+      "value": 52,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-cta-height)",
+        "ios": "SunoSize.layoutCtaHeight",
+        "android": "sunoLayoutCtaHeight"
+      }
+    },
+    "layout/toggle-width": {
+      "value": 51,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-toggle-width)",
+        "ios": "SunoSize.layoutToggleWidth",
+        "android": "sunoLayoutToggleWidth"
+      }
+    },
+    "layout/toggle-height": {
+      "value": 31,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-toggle-height)",
+        "ios": "SunoSize.layoutToggleHeight",
+        "android": "sunoLayoutToggleHeight"
+      }
+    },
+    "layout/tab-pill-width": {
+      "value": 52,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-tab-pill-width)",
+        "ios": "SunoSize.layoutTabPillWidth",
+        "android": "sunoLayoutTabPillWidth"
+      }
+    },
+    "layout/tab-pill-height": {
+      "value": 40,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-tab-pill-height)",
+        "ios": "SunoSize.layoutTabPillHeight",
+        "android": "sunoLayoutTabPillHeight"
+      }
+    },
+    "layout/card-category-width": {
+      "value": 120,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-card-category-width)",
+        "ios": "SunoSize.layoutCardCategoryWidth",
+        "android": "sunoLayoutCardCategoryWidth"
+      }
+    },
+    "layout/card-category-height": {
+      "value": 90,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-layout-card-category-height)",
+        "ios": "SunoSize.layoutCardCategoryHeight",
+        "android": "sunoLayoutCardCategoryHeight"
+      }
+    },
+    "stroke/hairline": {
+      "value": 0.5,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-stroke-hairline)",
+        "ios": "SunoStroke.strokeHairline",
+        "android": "sunoStrokeHairline"
+      }
+    },
+    "stroke/thin": {
+      "value": 1,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-stroke-thin)",
+        "ios": "SunoStroke.strokeThin",
+        "android": "sunoStrokeThin"
+      }
+    },
+    "stroke/medium": {
+      "value": 1.5,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-stroke-medium)",
+        "ios": "SunoStroke.strokeMedium",
+        "android": "sunoStrokeMedium"
+      }
+    },
+    "stroke/thick": {
+      "value": 2,
+      "unit": "pt",
+      "code": {
+        "web": "var(--suno-stroke-thick)",
+        "ios": "SunoStroke.strokeThick",
+        "android": "sunoStrokeThick"
+      }
+    }
+  },
+  "06 Typography": {
+    "font/family/sans": {
+      "value": "SF Pro"
+    },
+    "font/family/display": {
+      "value": "Instrument Serif"
+    },
+    "font/family/mono": {
+      "value": "JetBrains Mono"
+    },
+    "font/weight/regular": {
+      "value": "Regular"
+    },
+    "font/weight/medium": {
+      "value": "Medium"
+    },
+    "font/weight/semibold": {
+      "value": "Semibold"
+    },
+    "font/weight/bold": {
+      "value": "Bold"
+    },
+    "font/size/caption-2": {
+      "value": 11
+    },
+    "font/line-height/caption-2": {
+      "value": 13
+    },
+    "font/size/caption-1": {
+      "value": 12
+    },
+    "font/line-height/caption-1": {
+      "value": 16
+    },
+    "font/size/footnote": {
+      "value": 13
+    },
+    "font/line-height/footnote": {
+      "value": 18
+    },
+    "font/size/subheadline": {
+      "value": 15
+    },
+    "font/line-height/subheadline": {
+      "value": 20
+    },
+    "font/size/callout": {
+      "value": 16
+    },
+    "font/line-height/callout": {
+      "value": 21
+    },
+    "font/size/body": {
+      "value": 17
+    },
+    "font/line-height/body": {
+      "value": 22
+    },
+    "font/size/headline": {
+      "value": 17
+    },
+    "font/line-height/headline": {
+      "value": 22
+    },
+    "font/size/title-3": {
+      "value": 20
+    },
+    "font/line-height/title-3": {
+      "value": 25
+    },
+    "font/size/title-2": {
+      "value": 22
+    },
+    "font/line-height/title-2": {
+      "value": 28
+    },
+    "font/size/title-1": {
+      "value": 28
+    },
+    "font/line-height/title-1": {
+      "value": 34
+    },
+    "font/size/large-title": {
+      "value": 34
+    },
+    "font/line-height/large-title": {
+      "value": 41
+    },
+    "font/size/display": {
+      "value": 40
+    },
+    "font/line-height/display": {
+      "value": 44
+    },
+    "font/size/display-xl": {
+      "value": 48
+    },
+    "font/line-height/display-xl": {
+      "value": 52
+    }
+  },
+  "07 Motion": {
+    "duration/instant": {
+      "value": "0.1s",
+      "code": {
+        "web": "var(--suno-duration-instant)",
+        "ios": "SunoMotion.durationInstant",
+        "android": "sunoDurationInstant"
+      }
+    },
+    "duration/fast": {
+      "value": "0.2s",
+      "code": {
+        "web": "var(--suno-duration-fast)",
+        "ios": "SunoMotion.durationFast",
+        "android": "sunoDurationFast"
+      }
+    },
+    "duration/base": {
+      "value": "0.3s",
+      "code": {
+        "web": "var(--suno-duration-base)",
+        "ios": "SunoMotion.durationBase",
+        "android": "sunoDurationBase"
+      }
+    },
+    "duration/slow": {
+      "value": "0.45s",
+      "code": {
+        "web": "var(--suno-duration-slow)",
+        "ios": "SunoMotion.durationSlow",
+        "android": "sunoDurationSlow"
+      }
+    },
+    "duration/gradient-loop": {
+      "value": "6s",
+      "code": {
+        "web": "var(--suno-duration-gradient-loop)",
+        "ios": "SunoMotion.durationGradientLoop",
+        "android": "sunoDurationGradientLoop"
+      }
+    },
+    "easing/standard": {
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "code": {
+        "web": "var(--suno-easing-standard)",
+        "ios": "SunoMotion.easingStandard",
+        "android": "sunoEasingStandard"
+      }
+    },
+    "easing/emphasized": {
+      "value": "cubic-bezier(0.2, 0, 0, 1)",
+      "code": {
+        "web": "var(--suno-easing-emphasized)",
+        "ios": "SunoMotion.easingEmphasized",
+        "android": "sunoEasingEmphasized"
+      }
+    },
+    "easing/spring": {
+      "value": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "code": {
+        "web": "var(--suno-easing-spring)",
+        "ios": "SunoMotion.easingSpring",
+        "android": "sunoEasingSpring"
+      }
+    }
+  },
+  "08 Opacity": {
+    "opacity/disabled": {
+      "value": 40,
+      "unit": "%",
+      "code": {
+        "web": "var(--suno-opacity-disabled)",
+        "ios": "SunoOpacity.opacityDisabled",
+        "android": "sunoOpacityDisabled"
+      }
+    },
+    "opacity/pressed": {
+      "value": 70,
+      "unit": "%",
+      "code": {
+        "web": "var(--suno-opacity-pressed)",
+        "ios": "SunoOpacity.opacityPressed",
+        "android": "sunoOpacityPressed"
+      }
+    },
+    "opacity/inactive": {
+      "value": 60,
+      "unit": "%",
+      "code": {
+        "web": "var(--suno-opacity-inactive)",
+        "ios": "SunoOpacity.opacityInactive",
+        "android": "sunoOpacityInactive"
+      }
+    },
+    "opacity/overlay": {
+      "value": 60,
+      "unit": "%",
+      "code": {
+        "web": "var(--suno-opacity-overlay)",
+        "ios": "SunoOpacity.opacityOverlay",
+        "android": "sunoOpacityOverlay"
+      }
+    },
+    "opacity/glass": {
+      "value": 12,
+      "unit": "%",
+      "code": {
+        "web": "var(--suno-opacity-glass)",
+        "ios": "SunoOpacity.opacityGlass",
+        "android": "sunoOpacityGlass"
+      }
+    },
+    "opacity/full": {
+      "value": 100,
+      "unit": "%",
+      "code": {
+        "web": "var(--suno-opacity-full)",
+        "ios": "SunoOpacity.opacityFull",
+        "android": "sunoOpacityFull"
+      }
+    }
+  },
+  "textStyles": [
+    {
+      "name": "Display/Serif XL",
+      "family": "Instrument Serif",
+      "weight": "Regular",
+      "size": 48,
+      "lineHeight": 52,
+      "letterSpacing": -0.5
+    },
+    {
+      "name": "Display/Serif L",
+      "family": "Instrument Serif",
+      "weight": "Regular",
+      "size": 40,
+      "lineHeight": 44,
+      "letterSpacing": -0.4
+    },
+    {
+      "name": "Large Title/Bold",
+      "family": "SF Pro",
+      "weight": "Bold",
+      "size": 34,
+      "lineHeight": 41,
+      "letterSpacing": 0.4
+    },
+    {
+      "name": "Large Title/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 34,
+      "lineHeight": 41,
+      "letterSpacing": 0.4
+    },
+    {
+      "name": "Title 1/Bold",
+      "family": "SF Pro",
+      "weight": "Bold",
+      "size": 28,
+      "lineHeight": 34,
+      "letterSpacing": 0.36
+    },
+    {
+      "name": "Title 1/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 28,
+      "lineHeight": 34,
+      "letterSpacing": 0.36
+    },
+    {
+      "name": "Title 2/Bold",
+      "family": "SF Pro",
+      "weight": "Bold",
+      "size": 22,
+      "lineHeight": 28,
+      "letterSpacing": 0.35
+    },
+    {
+      "name": "Title 2/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 22,
+      "lineHeight": 28,
+      "letterSpacing": 0.35
+    },
+    {
+      "name": "Title 3/Semibold",
+      "family": "SF Pro",
+      "weight": "Semibold",
+      "size": 20,
+      "lineHeight": 25,
+      "letterSpacing": 0.38
+    },
+    {
+      "name": "Title 3/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 20,
+      "lineHeight": 25,
+      "letterSpacing": 0.38
+    },
+    {
+      "name": "Headline/Semibold",
+      "family": "SF Pro",
+      "weight": "Semibold",
+      "size": 17,
+      "lineHeight": 22,
+      "letterSpacing": -0.41
+    },
+    {
+      "name": "Body/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 17,
+      "lineHeight": 22,
+      "letterSpacing": -0.41
+    },
+    {
+      "name": "Body/Medium",
+      "family": "SF Pro",
+      "weight": "Medium",
+      "size": 17,
+      "lineHeight": 22,
+      "letterSpacing": -0.41
+    },
+    {
+      "name": "Body/Semibold",
+      "family": "SF Pro",
+      "weight": "Semibold",
+      "size": 17,
+      "lineHeight": 22,
+      "letterSpacing": -0.41
+    },
+    {
+      "name": "Callout/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 16,
+      "lineHeight": 21,
+      "letterSpacing": -0.32
+    },
+    {
+      "name": "Callout/Medium",
+      "family": "SF Pro",
+      "weight": "Medium",
+      "size": 16,
+      "lineHeight": 21,
+      "letterSpacing": -0.32
+    },
+    {
+      "name": "Subheadline/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 15,
+      "lineHeight": 20,
+      "letterSpacing": -0.24
+    },
+    {
+      "name": "Subheadline/Medium",
+      "family": "SF Pro",
+      "weight": "Medium",
+      "size": 15,
+      "lineHeight": 20,
+      "letterSpacing": -0.24
+    },
+    {
+      "name": "Subheadline/Semibold",
+      "family": "SF Pro",
+      "weight": "Semibold",
+      "size": 15,
+      "lineHeight": 20,
+      "letterSpacing": -0.24
+    },
+    {
+      "name": "Footnote/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 13,
+      "lineHeight": 18,
+      "letterSpacing": -0.08
+    },
+    {
+      "name": "Footnote/Medium",
+      "family": "SF Pro",
+      "weight": "Medium",
+      "size": 13,
+      "lineHeight": 18,
+      "letterSpacing": -0.08
+    },
+    {
+      "name": "Footnote/Semibold",
+      "family": "SF Pro",
+      "weight": "Semibold",
+      "size": 13,
+      "lineHeight": 18,
+      "letterSpacing": -0.08
+    },
+    {
+      "name": "Caption 1/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Caption 1/Medium",
+      "family": "SF Pro",
+      "weight": "Medium",
+      "size": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Caption 2/Regular",
+      "family": "SF Pro",
+      "weight": "Regular",
+      "size": 11,
+      "lineHeight": 13,
+      "letterSpacing": 0.07
+    },
+    {
+      "name": "Caption 2/Semibold",
+      "family": "SF Pro",
+      "weight": "Semibold",
+      "size": 11,
+      "lineHeight": 13,
+      "letterSpacing": 0.07
+    },
+    {
+      "name": "Mono/Label",
+      "family": "JetBrains Mono",
+      "weight": "Regular",
+      "size": 11,
+      "lineHeight": 16,
+      "letterSpacing": 0.6
+    },
+    {
+      "name": "Mono/Time",
+      "family": "JetBrains Mono",
+      "weight": "Regular",
+      "size": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Mono/Code",
+      "family": "JetBrains Mono",
+      "weight": "Regular",
+      "size": 13,
+      "lineHeight": 18,
+      "letterSpacing": 0
+    }
+  ],
+  "effectStyles": {
+    "Elevation/Level 1 · Card": "drop-shadow shadow/default 0 1 blur 3",
+    "Elevation/Level 2 · Menu & Toast": "drop-shadow shadow/strong 0 8 blur 24",
+    "Elevation/Level 3 · Sheet & FAB": "drop-shadow shadow/strong 0 12 blur 40",
+    "Glow/Brand": "drop-shadow shadow/brand-glow 0 8 blur 28",
+    "Glass/Regular": "background-blur 24 + inner-shadow highlight/glass 0 1",
+    "Glass/Strong": "background-blur 40 + inner-shadow highlight/glass 0 1",
+    "Grain/Brand Gradient": "noise white 35% size 1.2 density 0.55",
+    "Grain/Background": "noise white 8% size 1.0 density 0.40",
+    "Composite/FAB Create": "Level 3 + Glow/Brand + Grain/Brand Gradient"
+  }
+}
