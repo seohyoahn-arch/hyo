@@ -1,4 +1,4 @@
-# Open iOS Design System — 디자인 가이드라인 (v1.3)
+# Open iOS Design System — 디자인 가이드라인 (v1.3.1)
 
 Figma 파일: https://www.figma.com/design/Uh7ZcxfLnMibPHshG1bUur/Untitled
 기준 기기: iPhone 402 × 874 pt (Dynamic Island), 상태바 62, 하단 세이프 에어리어 34
@@ -139,8 +139,8 @@ content 안의 모든 섹션은 Section Header(선택) + 본문이다. 그리드
 | 온보딩 제목·이름 | 대문자 높이 16.4pt, 행 간격 24.7 | Title/2 22/28 | 23/26, 자간 −0.3 |
 | 히어로 보조 문구(Daily Meditation) | 대문자 10pt, 폭 148pt | Body 15 | Body/Small 14 |
 | 카테고리 칩(Meditate) | 대문자 8~9pt | Body/Large 17 | Body/Small 14 |
-| 요일 글자 S M T W | 대문자 6pt | Label/Day 10 Medium | 9 Regular, 자간 +1.4, 밑줄 11×2 |
-| 탭바 라벨 TODAY | 대문자 5.5pt | Mono/Tab 10 | 8, 자간 +1.2 |
+| 요일 글자 S M T W | 대문자 6pt(≈9pt) | Label/Day 10 Medium | 10 Regular(접근성 하한), 자간 +1.4, 밑줄 11×1 |
+| 탭바 라벨 TODAY | 대문자 5.5pt(≈8pt) | Mono/Tab 10 Medium | 10 Regular(접근성 하한), 자간 +1.2 |
 | 네비 오른쪽 텍스트 Later → | 대문자 10.5pt | Footnote 13 | Body 15 |
 | 라인 아이콘 선 | 2~3px ≈ 1pt | 1.25~1.5pt | 1pt (`icon/stroke`), 둥근 끝 |
 | 종 아이콘 | 18×18pt 아치 | 14×12 | 18pt 글리프로 재작성 |
@@ -168,6 +168,10 @@ content 안의 모든 섹션은 Section Header(선택) + 본문이다. 그리드
 | 온보딩 | 제목 Title/2 24, 입력값 Title/3 20, 밑줄 회색, 헬퍼 없음, FAB 60 우10·하14 | Text Field 오버라이드, FAB 위치 |
 
 발견해서 고친 버그: 섹션 헤더 Mono 변형의 Title 프로퍼티가 중복 생성돼 인스턴스 제목이 바뀌지 않던 문제, 시트 안 태그 인스턴스에 남아 있던 잘못된 채움 오버라이드, 리사이즈한 아바타·FAB가 둥근 사각형이 되던 문제(반경을 `radius/full`에 바인딩).
+
+## 14. v1.3.1 최소 글자 크기 10pt 적용
+
+원본 실측은 요일 9pt·탭 라벨 8pt·태그 9pt였지만, 접근성 페이지의 최소 10pt 규칙을 우선해 `Label/Day`, `Mono/Tab`, `Label/Tag`와 레이더 축 라벨을 모두 10pt로 올렸다. 시스템 안에 10pt 미만 스타일은 없다. 원본과의 차이는 1~2pt이며 자간을 유지해 인상은 같다.
 
 ## 10. 알려진 한계
 
