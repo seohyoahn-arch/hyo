@@ -1,4 +1,4 @@
-# Open iOS Design System — 디자인 가이드라인 (v1.4)
+# Open iOS Design System — 디자인 가이드라인 (v1.5)
 
 Figma 파일: https://www.figma.com/design/Uh7ZcxfLnMibPHshG1bUur/Untitled
 기준 기기: iPhone 402 × 874 pt (Dynamic Island), 상태바 62, 하단 세이프 에어리어 34
@@ -186,8 +186,78 @@ content 안의 모든 섹션은 Section Header(선택) + 본문이다. 그리드
 | 활성 Discover 아이콘(채운 돋보기) 없음 | `Icon/search-fill` 추가, Tab Bar Active=Discover에 적용. Studio 활성은 `map-pin-fill` |
 | 섹션 간격 | 구분선 309, 제목 365, 카드 상단 ≈440으로 원본과 맞춤 |
 
+## 16. v1.5 서체와 스케일을 원본 이미지에 맞춤
+
+화면 13장을 원본 캡처와 2배 크기로 나란히 놓고 글자 높이와 위치를 픽셀 단위로 다시 쟀다. 두 가지가 드러났다. 첫째, 원본 서체는 SF Pro가 아니다. 가로로 끝나는 획, 곧게 떨어지는 y, 넓은 M 같은 특징이 Helvetica 계열과 일치한다. 둘째, 섹션 라벨·피드·칩·카드 제목처럼 작은 글자 대부분이 시스템보다 1~3pt 작았다.
+
+### 서체
+
+- 산세리프를 SF Pro에서 **Helvetica Neue**(55 Roman / 45 Light / 65 Medium)로 바꿨다. 텍스트 스타일 20개와 스타일이 연결되지 않은 텍스트 73곳을 모두 교체했다. iOS에서는 내장 서체 `HelveticaNeue`, `HelveticaNeue-Light`, `HelveticaNeue-Medium`으로 1:1 대응한다.
+- 라이브러리 상태바의 시각(9:41)만 SF로 남는다. 상태바는 iOS가 그리는 영역이라 손대지 않는다.
+- 크기는 대문자 높이(Helvetica Neue 기준 0.714em)로 다시 맞췄다. 원본과 글자 폭이 조금 다른 경우가 있는데, 원본 서체의 소문자가 Helvetica Neue보다 약 6~9% 좁기 때문이다. 폭이 아니라 높이를 기준으로 맞춘 이유는 화면에서 글자 크기로 읽히는 것이 높이이기 때문이다.
+
+### 텍스트 스타일 변경
+
+| 스타일 | 이전 | 변경 | 근거(원본 대문자 높이) |
+|---|---|---|---|
+| Label/Section | 13/16 | 15/18, 자간 +0.4 | FOR YOU·FEATURED IN·SUMMARY 10.5pt |
+| Label/Section-sm (신설) | — | 13/16, 자간 +0.6 | Community의 TODAY 9pt |
+| Body/Small | 14/19 | 14/16 | 설명문 행 간격 16 |
+| Footnote | 13/18 | 13/17 | 결제 안내·호흡 설명 행 간격 16.5~17 |
+| Mono/Label | 11, +0.9 | 12/14, +0.3 | AUGUST 2025·BIOMETRICS 8.5pt |
+| Mono/Time | 12, +0.5 | 11/14, +0.3 | 일정 시각 글자 폭 55pt |
+| Mono/Tab | 10, +1.2 | 10, 자간 0 | 탭 라벨 TODAY 폭 28pt |
+| Mono/Caption (신설) | — | 10/14, +0.3 | 가격 카드 자동 갱신 문구 한 줄 |
+| Mono/Title (신설) | — | 20/24, +0.5 | 게스트 패스 카드 제목 13.5pt |
+
+### 토큰
+
+- `margin/screen` 12 → 10. 타일·아바타·카드 왼쪽 가장자리가 모두 10에서 시작한다.
+- `nav/padding-left` 14 신설. 뒤로가기 화살표는 14, 오른쪽 아이콘은 20에서 끝난다.
+- `list/row-feed` 62 신설.
+
+### 컴포넌트
+
+| 컴포넌트 | 변경 |
+|---|---|
+| Tab Item / Tab Bar | 아이콘 중심을 탭바 위에서 34, 라벨 중심을 56으로 고정. 비활성 아이콘이 10pt 아래 있던 문제 해결 |
+| Segment Header / Segment Tab | 높이 40, 라벨 Body/Large 17, 밑줄은 글자 아래 4, 오른쪽 아이콘 간격 26 |
+| Nav Bar | 높이 50, 제목 Title/3, 왼쪽 14·오른쪽 18 |
+| Week Strip Header / Day Tab | 높이 48, 요일 글자 간격 24.5, 밑줄 13×1.5, 종 아이콘은 오른쪽 20 |
+| Category Chip | 라벨 Caption/1 12 |
+| Tile / Collection | 186×186, 반경 6, 제목 Title/2, 안쪽 여백 10/7 |
+| Section Header | 높이 32, Sans 라벨 Label/Section 15 (작은 변형은 Label/Section-sm) |
+| List Row / Feed | 높이 62, 본문 Body 15, 썸네일 40 반경 2, 하트 24 |
+| List Row / Settings | 구분선을 왼쪽 21에서 오른쪽 끝까지 |
+| List Row / Schedule | 시각 Mono/Time 11, 요일 열은 화면 폭 7등분 |
+| Card / Class Large | 아트워크 슬롯 280, 제목 Body/Large 17, 메타 Body/Small 14, 간격 6 |
+| Card / Price | 반경 16, 약관 Mono/Caption 한 줄 |
+| Banner / Announcement | 361×238, 다음 배너가 오른쪽에 14 간격으로 비침 |
+| Bottom Sheet (Dark) | 높이 504, 제목 아래 구분선은 상단에서 85 |
+| Selection Row | 높이 62, 라벨 Body/Large, 태그 간격 8 |
+| Setting Card | 내용에 맞춰 폭 결정, 좌우 여백 30, 반경 14, 라벨 Caption/1, 값 Title/3 |
+| Button / Button Small | 라벨 Title/3 20, Small Medium 높이 42 |
+| FAB Play | 링 선 2, 글로우 강화 |
+| Text Field | 값 Title/3, 밑줄까지 7 |
+| Chart / Life Score Radar | 415 크기, 축 라벨 Label/Category 10, 점수 다각형 1pt 선 + 6% 채움 |
+| Card / Guest Pass (신설) | 반경 24 외곽선 카드, Mono/Title 제목, 25pt 아이콘 버튼 |
+
+### 템플릿
+
+- 13장 전부 원본과 위치를 다시 맞췄다. Discover · Breathe는 3줄 타일(Relax, Release 추가)과 그 아래 NEW RELEASES / MOST PRACTICED 카드 구조로 바꿨다.
+- Onboarding · Email에는 iOS 27 라이브러리의 다크 키보드를 넣고 FAB를 키보드 위 10에 두었다.
+- 상태바의 Dynamic Island 사각형은 모든 템플릿에서 숨겼다. 실제 기기에서는 검정 영역이라 그려지지 않는다.
+- 템플릿 안의 시맨틱 색은 다크 모드 값으로 고정했다. 라이브러리 상태바가 요구하는 모드 설정 때문에 일부 변수가 흰색으로 풀리던 문제를 막기 위해서다. 변수 연결은 유지된다.
+
+### 남은 차이
+
+- 원본 소문자 폭이 Helvetica Neue보다 좁아 긴 제목은 5~10pt 더 넓게 흐른다. 줄바꿈이 생기면 글자 크기를 줄이지 말고 폭을 확보한다.
+- 원본 탭바 라벨은 8pt, 요일 글자는 9pt다. 10pt 하한 규칙을 유지한다.
+- Discover · Breathe의 Relax, Release 타일은 Design Source의 남은 이미지를 임시로 썼다.
+
 ## 10. 알려진 한계
 
 - Design Source 페이지가 비어 있어 타일·카드·배너 이미지는 참고 화면에서 잘라낸 임시 이미지다. 최종 에셋으로 교체해야 한다.
 - 상태바만 iOS 27 라이브러리를 쓴다. Open의 탭바는 곡선과 활성 라벨 방식이 시스템과 달라 자체 컴포넌트로 만들었다.
-- 키보드·액션시트·알럿은 iOS 27 라이브러리의 `Keyboard`, `Action Sheet`, `Alert (Delete)`를 그대로 쓰면 된다. 템플릿에는 넣지 않았다.
+- 액션시트·알럿은 iOS 27 라이브러리의 `Action Sheet`, `Alert (Delete)`를 그대로 쓰면 된다. 키보드는 Onboarding · Email 템플릿에만 넣었다.
+- Helvetica Neue는 Figma에서 사용자의 Mac에 설치된 서체를 쓴다. 다른 편집자의 기기에 같은 서체가 없으면 누락 경고가 뜬다. 라이브러리 공유 전에 팀 전체의 서체 설치를 확인한다.
