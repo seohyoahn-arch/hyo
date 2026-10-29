@@ -1,7 +1,7 @@
 {
  "$meta": {
   "name": "Suno iOS Design System",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "date": "2026-10-29",
   "figma": "https://www.figma.com/design/L8QrbkFEPcfSiB8KLq5SBA/",
   "device": "iPhone 402x874 pt",
@@ -12,6 +12,7 @@
    ]
   },
   "changelog": [
+   "1.2.1 (2026-10-29): 웜 배경 위 단색 컨트롤을 Layer 스타일로 통일 — Icon Button·Chip·Button Small Style=Layer, Segmented Control Style 축, Card / Creator Surface 축, FAB Create Disabled 반투명화. 토큰 bg/layer-pressed·control/grabber 추가, control/track 흰색 24%/검정 12%로 재정의. Create·Create · More Options·Light Check · Create·Now Playing·Phone Number 템플릿 인스턴스 전환.",
    "1.2.0 (2026-10-29): 변형별 기본값 분리(Text Field Placeholder/Text, Progress Banner Loading/Ready Message, Empty State Error Title/Description + x-circle, Share Item 라벨 고정, Segmented Control 배지 SAVE 20%), 반투명 레이어 토큰 bg/layer-1·2·3 · border/layer · bg/brand-tint, 브랜드 테두리 그라데이션 gradient/brand-stroke-*, grain/* · glow/* 토큰, 프리미티브 brand/violet · alpha 6종, Grain/Brand Gradient 듀오톤 재조정 · Grain/Background 재조정 · Glow/Brand Inner 신설, 브랜드 버튼·FAB Gradient Surface 분리(6겹 채움), Button Style=Brand Outline 6종, Button Small Brand Outline·Model Pill 그라데이션 테두리, List Row / Option · Card / Layer Group, 템플릿 Create · More Options, Create 카드 bg/layer-1 전환, recipes 블록 추가.",
    "1.1.0 (2026-10-29): 대비 보정(neutral/350·450, fg/tertiary·fg/secondary·icon/inactive 재정의), Brand 버튼 레이블 스크림, gradient/warm-glow, delay 토큰, 09 Z-Index, Text Field·Code Input·Page Control·Empty State·Tooltip 추가, Avatar/Thumbnail Placeholder 타입, 리사이징·Dynamic Type 규칙, Light 모드 검증",
    "1.0.0 (2026-10-29): 최초 구축"
@@ -1257,14 +1258,14 @@
   },
   "control/track": {
    "dark": {
-    "alias": "neutral/600",
-    "value": "#3A3A3C"
+    "alias": "alpha/white-24",
+    "value": "#FFFFFF 24%"
    },
    "light": {
-    "alias": "neutral/200",
-    "value": "#C7C7CC"
+    "alias": "alpha/black-12",
+    "value": "#000000 12%"
    },
-   "description": "슬라이더·진행바 트랙",
+   "description": "슬라이더·프로그레스 트랙, 스텝 슬라이더 눈금 (반투명: 웜 배경·카드 위에서도 같은 밝기 차)",
    "code": {
     "web": "var(--suno-control-track)",
     "ios": "SunoColor.controlTrack",
@@ -1681,6 +1682,40 @@
     "web": "var(--suno-glow-brand-inner)",
     "ios": "SunoColor.glowBrandInner",
     "android": "sunoGlowBrandInner"
+   }
+  },
+  "bg/layer-pressed": {
+   "dark": {
+    "alias": "alpha/white-12",
+    "value": "#FFFFFF 12%"
+   },
+   "light": {
+    "alias": "alpha/black-12",
+    "value": "#000000 12%"
+   },
+   "description": "Layer 스타일 컨트롤(Icon Button·Chip·Button Small)의 눌림: layer-3보다 한 단계 밝게",
+   "scope": "fill",
+   "code": {
+    "web": "var(--suno-bg-layer-pressed)",
+    "ios": "SunoColor.bgLayerPressed",
+    "android": "sunoBgLayerPressed"
+   }
+  },
+  "control/grabber": {
+   "dark": {
+    "alias": "alpha/white-24",
+    "value": "#FFFFFF 24%"
+   },
+   "light": {
+    "alias": "alpha/black-24",
+    "value": "#000000 24%"
+   },
+   "description": "시트 그래버(36×5). 어떤 배경에서도 같은 밝기 차",
+   "scope": "fill",
+   "code": {
+    "web": "var(--suno-control-grabber)",
+    "ios": "SunoColor.controlGrabber",
+    "android": "sunoControlGrabber"
    }
   }
  },
@@ -3073,7 +3108,16 @@
      "control inside layer-2"
     ]
    ],
-   "rules": "최대 3단. 같은 단을 같은 단 위에 올리지 않는다. 카드 층에는 블러 없음(Glass/*는 떠 있는 바에만). 단색 bg/surface-*는 평면 캔버스(Library·Settings) 카드용, layer-*는 그라데이션 배경 위 전용."
+   "rules": "최대 3단. 같은 단을 같은 단 위에 올리지 않는다. 카드 층에는 블러 없음(Glass/*는 떠 있는 바에만). 단색 bg/surface-*는 평면 캔버스(Library·Settings) 카드용, layer-*는 그라데이션 배경 위 전용.",
+   "controls": {
+    "Icon Button": "Style=Layer: bg/layer-3, Pressed bg/layer-pressed, Disabled 40%, no blur",
+    "Chip": "Style=Layer: bg/layer-3, Pressed bg/layer-pressed, Disabled 40%",
+    "Button Small": "Style=Layer: bg/layer-3, Pressed bg/layer-pressed, Disabled bg/layer-2 + fg/disabled",
+    "Segmented Control": "Style=Layer: bg/layer-2 container + border/layer, selected segment bg/layer-3",
+    "Card / Creator": "Surface=Layer: bg/layer-1 + border/layer, Follow = Button Small Style=Layer",
+    "FAB Create Disabled": "bg/layer-2 + border/layer, label fg/tertiary",
+    "rule": "평면 캔버스(Home·Library·Settings)는 Filled·Tonal·Solid, 그라데이션 배경(Warm·Cool·Cover 상단)은 Layer"
+   }
   }
  }
 }

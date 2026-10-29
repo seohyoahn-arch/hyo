@@ -96,11 +96,14 @@ Layout & Effects 페이지의 "Surface Layers · Grain · Brand Gradient" 섹션
 | bg/layer-1 | 흰색 4% | 검정 6% | 그라데이션 배경 위 카드 (반경 lg) |
 | bg/layer-2 | 흰색 6% | 검정 8% | 카드 안의 행·그룹 (높이 52, 반경 md) |
 | bg/layer-3 | 흰색 8% | 검정 12% | 행 안의 컨트롤(칩·미니 필) |
+| bg/layer-pressed | 흰색 12% | 검정 12% | Layer 컨트롤의 눌림(한 단계 밝게) |
 | border/layer | 흰색 6% | 검정 6% | 모든 층의 1px 안쪽 헤어라인 |
 
 - 최대 3단까지만 쌓고, 같은 단을 같은 단 위에 올리지 않는다. 층에는 블러를 걸지 않는다(Glass/*는 스크롤 위를 떠다니는 바 전용).
 - 평면 캔버스(Library·Settings·Home)의 카드는 그대로 단색 bg/surface-1~3을 쓴다. layer-*는 Warm·Cool·Cover 배경 위에서만 쓴다.
 - 컴포넌트: `Card / Layer Group`(헤더 + Content 슬롯)과 `List Row / Option`(Control=Slider·Segmented). 템플릿 `Create · More Options`가 실제 쌓임 예시다.
+- 컨트롤도 같은 규칙을 따른다. Icon Button·Chip·Button Small은 `Style=Layer`(bg/layer-3, Pressed는 투명도 대신 bg/layer-pressed로 한 단계 밝게, Disabled 40%), Segmented Control은 `Style=Layer`(bg/layer-2 컨테이너 + 선택 세그먼트 bg/layer-3), Card / Creator는 `Surface=Layer`(bg/layer-1 + border/layer). 평면 캔버스에서는 Filled·Tonal·Solid를 그대로 쓴다. FAB Create Disabled는 bg/layer-2 + border/layer + fg/tertiary로, 참고 화면처럼 읽히는 회색 라벨을 유지한다.
+- 트랙과 눈금: control/track을 흰색 24%(라이트 검정 12%)로 바꿔 웜 배경·카드 위에서도 같은 밝기 차를 낸다. 시트 그래버는 control/grabber(흰색 24%).
 
 **브랜드 그라데이션 면(Gradient Surface)**
 
@@ -161,9 +164,9 @@ Layout & Effects 페이지의 "Surface Layers · Grain · Brand Gradient" 섹션
 | 🔤 Foundations · Typography | 서체 3종, 타입 스케일 29 표본과 iOS 매핑, 규칙 |
 | 📐 Foundations · Layout & Effects | 402×874 해부도, Spacing·Radius·Size 표, 효과 10종 데모, Surface Layers·Grain·Brand Gradient 레시피(층 데모·채움 7겹 표·그레인 표본), Motion(delay 포함)·Opacity, iPhone 폭별 규칙, 컴포넌트별 리사이징 표, Z-Index, Dynamic Type 표 |
 | ✦ Icons | 24px 아이콘 83종 (Nav 5 · Media 16 · Action 38 · Object 20 · Social 4) |
-| 🧩 Navigation | Icon Button(24) · FAB Mini(3) · FAB Create(4) · Model Pill · Top Bar(4) · Tab Bar Item(6) · Tab Bar(10) · Mini Player(3) · Toast(2) · Progress Banner(2) · Background(5) |
-| 🧩 Buttons & Controls | Avatar(24, Photo/Placeholder) · Badge(3) · Thumbnail(8, Image/Placeholder) · Toggle(4) · Chip(12) · Button(36, Brand Outline 포함) · Button Small(18) · Segmented Control(2) · Underline Tabs(5) · Search Field(3) · Prompt Field(3) · Text Field(15) · Code Input(3) · Step Slider(3) · Progress Bar(2) · Page Control(5) |
-| 🧩 Cards · Lists · Overlays | List Row / Song(4) · Setting(12) · Menu(3) · Option(2) · Card / Layer Group · Section Header(2) · Comment Row · Card / Category(2) · Song Poster(2) · Pricing(2) · Creator(2) · Promo Banner · Sheet / Bottom(2) · Dialog / Alert · Menu / Context(3) · Share Item(5) · Empty State(3) · Tooltip(2) |
+| 🧩 Navigation | Icon Button(30, Layer 포함) · FAB Mini(3) · FAB Create(4) · Model Pill · Top Bar(4) · Tab Bar Item(6) · Tab Bar(10) · Mini Player(3) · Toast(2) · Progress Banner(2) · Background(5) |
+| 🧩 Buttons & Controls | Avatar(24, Photo/Placeholder) · Badge(3) · Thumbnail(8, Image/Placeholder) · Toggle(4) · Chip(15, Layer 포함) · Button(36, Brand Outline 포함) · Button Small(21, Layer 포함) · Segmented Control(4, Solid/Layer) · Underline Tabs(5) · Search Field(3) · Prompt Field(3) · Text Field(15) · Code Input(3) · Step Slider(3) · Progress Bar(2) · Page Control(5) |
+| 🧩 Cards · Lists · Overlays | List Row / Song(4) · Setting(12) · Menu(3) · Option(2) · Card / Layer Group · Section Header(2) · Comment Row · Card / Category(2) · Song Poster(2) · Pricing(2) · Creator(4, Surface Solid/Layer) · Promo Banner · Sheet / Bottom(2) · Dialog / Alert · Menu / Context(3) · Share Item(5) · Empty State(3) · Tooltip(2) |
 | 📱 Templates | Home · Library · Create · Now Playing · Profile · Settings · Auth · Onboarding · Phone Number · Create · More Options(레이어 오버레이 예시) + Light mode check 3장(Library·Create·Settings 검증용) |
 | — Reference — | IMG(원본 131장) · Design Source(iOS 27 예시, 이미지 소스) |
 
@@ -183,6 +186,7 @@ Layout & Effects 페이지의 "Surface Layers · Grain · Brand Gradient" 섹션
 
 ### 변경 이력
 
+- 1.2.1 (2026-10-29): 웜 배경 위에 단색으로 남아 있던 컨트롤을 반투명 Layer 스타일로 통일. Icon Button·Chip·Button Small `Style=Layer`, Segmented Control `Style` 축(Solid/Layer), Card / Creator `Surface` 축(Solid/Layer), FAB Create Disabled 반투명화. 토큰 bg/layer-pressed·control/grabber 추가, control/track을 흰색 24%/검정 12%로 재정의. Create·Create · More Options·Light Check · Create·Now Playing·Phone Number 템플릿의 인스턴스 전환.
 - 1.2.0 (2026-10-29): 변형별 기본값 분리(Text Field Placeholder/Text, Progress Banner Loading/Ready Message, Empty State Error Title/Description + x-circle, Share Item 라벨 고정, Segmented Control 배지 SAVE 20%). 반투명 레이어 토큰 bg/layer-1·2·3 · border/layer · bg/brand-tint, 브랜드 테두리 그라데이션 gradient/brand-stroke-start·mid·end, grain/* · glow/* 토큰, 프리미티브 brand/violet · alpha 6종. Grain/Brand Gradient 듀오톤 재조정, Grain/Background 재조정, Glow/Brand Inner 신설. 브랜드 버튼·FAB Create 채움·그레인을 자식 Gradient Surface로 분리(채움 6겹, 라벨에 그레인 없음). Button Style=Brand Outline 6종, Button Small Brand Outline·Model Pill 그라데이션 테두리 + 웜 틴트 + 안쪽 글로우. List Row / Option · Card / Layer Group, 템플릿 Create · More Options, Create 카드 bg/layer-1 전환. 문서: Layout & Effects 레시피 섹션, Color 토큰 표·Cover 갱신, tokens.json recipes.
 - 1.1.0 (2026-10-29): 대비 보정(neutral/350·450 추가, fg/tertiary·fg/secondary·icon/inactive 재정의), Brand 버튼·FAB 레이블 스크림, gradient/warm-glow, delay 토큰, 09 Z-Index, Text Field·Code Input·Page Control·Empty State·Tooltip 추가, Avatar/Thumbnail Placeholder 타입, 버튼·칩 Min/Max와 1줄 말줄임, 리사이징·Dynamic Type·iPhone 폭별 규칙 표, Light 모드 검증.
 - 1.0.0 (2026-10-29): 최초 구축.
