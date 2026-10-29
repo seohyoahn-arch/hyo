@@ -1,4 +1,4 @@
-# Open iOS Design System — 디자인 가이드라인 (v1.3.1)
+# Open iOS Design System — 디자인 가이드라인 (v1.4)
 
 Figma 파일: https://www.figma.com/design/Uh7ZcxfLnMibPHshG1bUur/Untitled
 기준 기기: iPhone 402 × 874 pt (Dynamic Island), 상태바 62, 하단 세이프 에어리어 34
@@ -172,6 +172,19 @@ content 안의 모든 섹션은 Section Header(선택) + 본문이다. 그리드
 ## 14. v1.3.1 최소 글자 크기 10pt 적용
 
 원본 실측은 요일 9pt·탭 라벨 8pt·태그 9pt였지만, 접근성 페이지의 최소 10pt 규칙을 우선해 `Label/Day`, `Mono/Tab`, `Label/Tag`와 레이더 축 라벨을 모두 10pt로 올렸다. 시스템 안에 10pt 미만 스타일은 없다. 원본과의 차이는 1~2pt이며 자간을 유지해 인상은 같다.
+
+## 15. v1.4 Discover · For You 화면 시스템 적용
+
+다른 도구로 재구성된 Discover 화면(노드 91:3718)을 시스템 기준으로 바꿨다.
+
+| 문제 | 수정 |
+|---|---|
+| Arimo 서체, 18/24/25pt 등 임의 크기, 스타일 미적용 22곳 | 모두 SF Pro 텍스트 스타일로 교체: 라이브러리 행 Title/2 대문자, 제목 Title/1, 설명 Body/Small(강조 구간 primary), 카드 제목 Title/2, 메타 Body |
+| 로컬 복제 컴포넌트(상태바·하단 내비·카드·단축 행) | iOS 27 상태바, 시스템 Tab Bar(Active=Discover), 새 `Card / Class Large`, 새 `List Row / Library`로 교체 후 복제본 삭제 |
+| 탭바 라벨 9pt | 시스템 탭바(10pt) |
+| 섹션 헤더 Label/Section 13 | 원본 실측 17pt → Section Header Sans 라벨·액션을 Body/Large 대문자로 변경 |
+| 활성 Discover 아이콘(채운 돋보기) 없음 | `Icon/search-fill` 추가, Tab Bar Active=Discover에 적용. Studio 활성은 `map-pin-fill` |
+| 섹션 간격 | 구분선 309, 제목 365, 카드 상단 ≈440으로 원본과 맞춤 |
 
 ## 10. 알려진 한계
 
