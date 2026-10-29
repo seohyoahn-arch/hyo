@@ -1,4 +1,4 @@
-# Open iOS Design System — 디자인 가이드라인
+# Open iOS Design System — 디자인 가이드라인 (v1.1)
 
 Figma 파일: https://www.figma.com/design/Uh7ZcxfLnMibPHshG1bUur/Untitled
 기준 기기: iPhone 402 × 874 pt (Dynamic Island), 상태바 62, 하단 세이프 에어리어 34
@@ -100,6 +100,34 @@ content 안의 모든 섹션은 Section Header(선택) + 본문이다. 그리드
 | 🧩 Components · Inputs & Controls | Text Field, Search Bar, Filter Chip, Tag, Category Label, Toggle, Checkbox, Score Circle, Selection Row, Setting Card, Stepper, Progress Bar, Page Dots |
 | 🧩 Components · Content | Section Header, Avatar, List Row (Class/Feed/Settings/Link/Schedule), Stat, Stat Row, Aura Background, Hero / Today, Tile / Collection, Card (Class/Program/Featured/Price/Credit), Banner, Bottom Sheet, Dialog, Toast, Shape ×3, Chart / Life Score Radar |
 | 📱 Templates · Screens | Today, Discover, Community, Studio, Profile, Paywall, Settings, Breathwork + Technique 시트, Life Score, Onboarding |
+
+## 11. v1.1 보강 (검토 체크리스트 대응)
+
+### 접근성
+- `color/text/tertiary` Dark 값을 gray/500(2.8:1)에서 새 Primitive gray/450 #767676(4.5:1)으로 올렸다. 13pt 이상에서만 사용하고, 10~12pt 라벨에는 보조 단서(숫자, 밑줄)가 있을 때만 쓴다.
+- `color/text/disabled`는 gray/500, Light 모드 `text/secondary`는 gray/600, 비활성 버튼 라벨은 gray/300으로 조정했다(4.6:1).
+- 포커스 토큰 `color/focus/ring`(2pt, 오프셋 2pt), `focus/ring-width`, `touch/min-target 44`를 추가했다.
+- ♿ Foundations · Accessibility 페이지: 실측 대비표, 컴포넌트별 터치 영역, Dynamic Type 확대 한도, 포커스 순서, VoiceOver 라벨·트레이트, 모션 감소·고대비 대응.
+
+### 상태 확장
+- Button: Focus 추가(5스타일 × 5상태). FAB: Pressed·Focus 추가. Icon Button: State 축 신설(Default/Pressed/Focus/Disabled). Text Link: Pressed.
+- Filter Chip: Pressed·Focus·Disabled. Selection Row: Pressed·Focus. Toggle: Disabled 축. Checkbox: Error·Disabled. Score Circle: Focus. Search Bar: Focused.
+- 공통 규칙: Pressed = `color/state/pressed-overlay` 12% 오버레이(+FAB/버튼 scale 0.96), Focus = 흰 2pt 링, Disabled = 35% 투명도.
+- 예외 상태 컴포넌트: `State / Message`(Empty·Error·Offline·NoResults), `Skeleton`(List Row·Tile·Card·Text Block), `Toast`(Success·Error·Info).
+
+### 모션
+- Motion 컬렉션 13개: duration instant 100 / fast 200 / base 300 / slow 500 / breath-in 4000 / breath-hold 2000 / glow-pulse 2400 / toast 3000 ms, easing standard·decelerate·accelerate·breath, spring/sheet.
+- 🎞 Foundations · Motion 페이지: 패턴별 진입·종료·모션 감소 대체표(탭 전환, 푸시, 모달, 시트, 다이얼로그, 토스트, 카테고리 칩 글로우, 히어로, 플레이 링, 하트, 호흡 도형, 스켈레톤, 눌림).
+
+### 반응형
+- Layout 컬렉션 모드 iPhone 375 / 402 / 430. 새 토큰 `content/width` 343/370/398, `grid/col-2` 167.5/181/195, `grid/col-3`, `card/scroll-width` 150/160/170, `tab-bar/curve-control-x` 187.5/201/215(곡선 높이 11 유지).
+- Layout & Effects 페이지에 고정/가변 요소 표(수평·수직 사이징, 내용이 늘 때 동작)와 조합·중첩 규칙을 추가했다. 가로 모드·iPad는 범위 밖.
+
+### 거버넌스·운영 규칙 (Guidelines §10–13)
+- 내비게이션·레이어 z-order: background → content → nav → status → tab bar → floating → toast → sheet → dialog → 시스템 알럿. 뒤로(←)와 닫기(×) 구분, 오버레이는 한 단계만.
+- 폼·검증: blur 시 형식 검사, 제출 시 필수값 검사, 전화번호 포맷, 비밀번호 6자, 동의 체크박스 Error, 오류 문구 규칙, 복구 규칙.
+- 데이터·콘텐츠: 빈/로딩/실패 처리, 글자 수·줄 수 한도, 숫자·날짜 표기, 이미지 실패 대비, 현지화 30% 여유.
+- 버전 체계(MAJOR/MINOR/PATCH), 변경 이력, 폐기 절차(`⛔ Deprecated/` 접두어, 1 MINOR 유지), 예외 승인, 기여 절차.
 
 ## 10. 알려진 한계
 
