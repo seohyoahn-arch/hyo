@@ -1,4 +1,4 @@
-# Open iOS Design System — 디자인 가이드라인 (v1.5)
+# Open iOS Design System — 디자인 가이드라인 (v1.5.1)
 
 Figma 파일: https://www.figma.com/design/Uh7ZcxfLnMibPHshG1bUur/Untitled
 기준 기기: iPhone 402 × 874 pt (Dynamic Island), 상태바 62, 하단 세이프 에어리어 34
@@ -254,6 +254,41 @@ content 안의 모든 섹션은 Section Header(선택) + 본문이다. 그리드
 - 원본 소문자 폭이 Helvetica Neue보다 좁아 긴 제목은 5~10pt 더 넓게 흐른다. 줄바꿈이 생기면 글자 크기를 줄이지 말고 폭을 확보한다.
 - 원본 탭바 라벨은 8pt, 요일 글자는 9pt다. 10pt 하한 규칙을 유지한다.
 - Discover · Breathe의 Relax, Release 타일은 Design Source의 남은 이미지를 임시로 썼다.
+
+## 17. v1.5.1 전체 에셋 점검
+
+컴포넌트 페이지 5장의 에셋 118개(아이콘 57, 로고 2, 내비게이션 9, 버튼 5, 입력 13, 콘텐츠 32)를 하나씩 렌더해 보고, 스크립트로 서체·텍스트 스타일·색 변수 연결을 전수 조사했다.
+
+### 자동 조사 결과
+
+| 항목 | 결과 |
+|---|---|
+| Helvetica Neue / DM Mono 외 서체 | 0건 |
+| 텍스트 스타일이 끊긴 글자 | 3건 발견 → 수정 (Text Field placeholder, Stat Profile 라벨, List Row / Library 라벨). 원인은 스타일을 건 뒤 대문자 변환을 따로 적용해 스타일이 풀린 것. 글자 자체를 대문자로 바꾸고 스타일을 다시 걸었다 |
+| 변수에 묶이지 않은 단색 | 1건 발견 → 수정 (레이더 점수 다각형). 탭바 블러 배경 1건은 의도된 고정 검정 |
+| 설명(description) 없는 컴포넌트 | 0건 |
+| 아이콘 선 두께 | 55개 전부 1pt, search-fill만 1.5 |
+| 시맨틱 색 변수 Dark/Light 해석 | 72개 전부 정상 (끊긴 별칭 없음) |
+
+### 눈으로 찾은 문제와 수정
+
+| 컴포넌트 | 문제 | 수정 |
+|---|---|---|
+| Button | 로딩 상태에서 화살표가 그대로 보임. 화살표 색이 라벨과 달라 Primary에서 흐릿함 | 로딩 변형만 아이콘 숨김(속성 연결 해제). 화살표 선 색을 각 변형의 라벨 색 변수에 묶음. 작업 중 "Show Trailing Icon" 기본값이 꺼져 모든 화살표가 사라졌던 것도 되돌림 |
+| Checkbox | 체크 상태에 닫기(×) 아이콘이 들어가 있었음 | Icon/check로 교체 |
+| Stepper | +/− 아이콘 선이 변수에 묶이지 않아 흐림 | icon/primary에 묶음 |
+| Setting Card | 좌우 여백 30이라 세 장이 화면을 넘침 | 여백 16. 세 장 합이 395로 402 안에 들어감 |
+| Card / Program | 제목 블록이 카드 아래로 잘림 | 하단 16 위에 고정 |
+| Chart / Life Score Radar | 점수 채움이 불투명 흰색으로 렌더됨 | 원인은 변수 바인딩 API가 불투명도를 1로 되돌리는 것. 바인딩 후 불투명도 6%를 다시 지정 |
+| Card / Guest Pass | 프로필 템플릿 안에 일반 프레임으로만 있었음 | Content 페이지의 정식 컴포넌트로 승격(Title 속성), 템플릿은 인스턴스로 교체 |
+
+### 확인했고 그대로 둔 것
+
+Tab Item·Tab Bar·Nav Bar·Segment·Week Strip·Category Chip, Button Small·FAB·Icon Button·Text Link, Text Field·Search Bar·Filter Chip·Tag·Category Label·Toggle·Score Circle·Selection Row·Progress·Page Dots, Section Header·Avatar·List Row 6종·Stat·Aura·Hero·Tile·Card 5종·Banner·Bottom Sheet·Dialog·Shape 3종·State·Skeleton·Toast·Avatar Upload·Card Class Large, 아이콘 57종과 로고 2종은 렌더 결과가 규칙과 맞아 손대지 않았다.
+
+### 템플릿 재검사
+
+13장 모두 Helvetica Neue 외 서체 0, 스타일 없는 글자 0, 분리된 컴포넌트 0.
 
 ## 10. 알려진 한계
 
