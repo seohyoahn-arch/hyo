@@ -1,4 +1,4 @@
-# Open iOS Design System — 디자인 가이드라인 (v1.1)
+# Open iOS Design System — 디자인 가이드라인 (v1.2)
 
 Figma 파일: https://www.figma.com/design/Uh7ZcxfLnMibPHshG1bUur/Untitled
 기준 기기: iPhone 402 × 874 pt (Dynamic Island), 상태바 62, 하단 세이프 에어리어 34
@@ -128,6 +128,26 @@ content 안의 모든 섹션은 Section Header(선택) + 본문이다. 그리드
 - 폼·검증: blur 시 형식 검사, 제출 시 필수값 검사, 전화번호 포맷, 비밀번호 6자, 동의 체크박스 Error, 오류 문구 규칙, 복구 규칙.
 - 데이터·콘텐츠: 빈/로딩/실패 처리, 글자 수·줄 수 한도, 숫자·날짜 표기, 이미지 실패 대비, 현지화 30% 여유.
 - 버전 체계(MAJOR/MINOR/PATCH), 변경 이력, 폐기 절차(`⛔ Deprecated/` 접두어, 1 MINOR 유지), 예외 승인, 기여 절차.
+
+## 12. v1.2 정밀도 보정 (2× 원본 캡처 실측)
+
+원본 캡처(882px, 2.19배) 두 장을 픽셀 단위로 재어 스케일과 선 굵기를 맞췄다.
+
+| 항목 | 실측 | 이전 값 | 변경 값 |
+|---|---|---|---|
+| 히어로 제목 ENGAGE | 대문자 높이 25.5pt, 행 간격 37pt | Display/Hero 44/46 | 36/38, 자간 −0.7 |
+| 온보딩 제목·이름 | 대문자 높이 16.4pt, 행 간격 24.7 | Title/2 22/28 | 23/26, 자간 −0.3 |
+| 히어로 보조 문구(Daily Meditation) | 대문자 10pt, 폭 148pt | Body 15 | Body/Small 14 |
+| 카테고리 칩(Meditate) | 대문자 8~9pt | Body/Large 17 | Body/Small 14 |
+| 요일 글자 S M T W | 대문자 6pt | Label/Day 10 Medium | 9 Regular, 자간 +1.4, 밑줄 11×2 |
+| 탭바 라벨 TODAY | 대문자 5.5pt | Mono/Tab 10 | 8, 자간 +1.2 |
+| 네비 오른쪽 텍스트 Later → | 대문자 10.5pt | Footnote 13 | Body 15 |
+| 라인 아이콘 선 | 2~3px ≈ 1pt | 1.25~1.5pt | 1pt (`icon/stroke`), 둥근 끝 |
+| 종 아이콘 | 18×18pt 아치 | 14×12 | 18pt 글리프로 재작성 |
+| 플레이 링 | 지름 58, 선 1.5pt | 56 / 2pt | 56 / 1.5pt (`stroke/ring`) |
+| 탭바 곡선 | 가장자리 상승 9.6pt | 11 | 10 (`tab-bar/curve-rise`) |
+| 홈 인디케이터 | 143×5 | 134 | 140 (`tab-bar/home-indicator-width`) |
+| 사진 업로드 원 | 지름 180pt, 1pt 플러스 20pt | 없음 | `Avatar / Upload` 컴포넌트, Onboarding · Photo 템플릿 |
 
 ## 10. 알려진 한계
 
