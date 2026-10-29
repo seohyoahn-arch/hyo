@@ -1,4 +1,4 @@
-# Open iOS Design System — 디자인 가이드라인 (v1.2)
+# Open iOS Design System — 디자인 가이드라인 (v1.3)
 
 Figma 파일: https://www.figma.com/design/Uh7ZcxfLnMibPHshG1bUur/Untitled
 기준 기기: iPhone 402 × 874 pt (Dynamic Island), 상태바 62, 하단 세이프 에어리어 34
@@ -148,6 +148,26 @@ content 안의 모든 섹션은 Section Header(선택) + 본문이다. 그리드
 | 탭바 곡선 | 가장자리 상승 9.6pt | 11 | 10 (`tab-bar/curve-rise`) |
 | 홈 인디케이터 | 143×5 | 134 | 140 (`tab-bar/home-indicator-width`) |
 | 사진 업로드 원 | 지름 180pt, 1pt 플러스 20pt | 없음 | `Avatar / Upload` 컴포넌트, Onboarding · Photo 템플릿 |
+
+## 13. v1.3 화면별 대조 보정
+
+템플릿 10장을 원본과 같은 배율(2×)로 나란히 놓고 비교해 고쳤다.
+
+| 화면 | 원본에서 확인한 것 | 반영 |
+|---|---|---|
+| 공통 | 콘텐츠 좌우 여백 11~12pt, 네비 아이콘 여백 20pt, 온보딩 여백 20pt, FAB 우측 10·하단 14 | `margin/screen` 12, `nav/padding-x` 20, `margin/onboarding` 20, `fab/inset-x` 10, `fab/inset-bottom` 14 |
+| Today | 요일 글자 간격 24.5pt, 밑줄 11×1 6pt 아래, 히어로 블록이 칩 위 40pt, 칩은 내용 폭 + 간격 42, 플레이 링 58 | 주간 스트립·카테고리 칩·히어로 간격 재조정 |
+| Community | 챌린지 아트 139, 참여자 아바타 18pt 겹침(−5), "6 / 31" 26pt, 진행바 2pt, 피드 아바타 40 | Stat-sm 26, Progress Challenge 2pt, Feed 아바타 40, 아바타 스택 |
+| Studio | 네비 우측 필터 + 아바타 40, 요일 열 간격 54(좌우 26 패딩), 사진 61×61 r4, 행 피치 94 | Schedule row·일정 스트립 수정, 네비 아바타 추가 |
+| Profile | 이름 Title/2, 라벨이 숫자 위에 오는 통계, 퀵카드 152×60 r14, 섹션 헤더 모노, 배너 238 r24, CTA 38 | Stat Size=Profile, Section Header Style=Mono, Banner 재조정 |
+| Paywall | 워드마크 35pt 넓은 자간, 카드 패딩 22/30·Body/Large, 셰브론 아이콘, 모노 섹션 헤더, 프로모 라벨 Body/Large 회색, 법적 문구 tertiary, CTA 60pt·하단 32 | 전부 반영 |
+| Settings | 제목 위 48 여백, 행 82pt Title/3, 첫 행 위 구분선, 링크 Body 46 피치, 링크 위 92 | List Row / Settings·Link 수정 |
+| Breathwork | 세그먼트 쌍이 네비 행 안(중앙), 씨앗 도형 212·선 1.5, 이름 Title/3 + 태그 + 설명 + 좌우 셰브론, 카드 74pt, 플레이 링 82·선 1 | 템플릿 재조립, Setting Card 수정, `Breathwork · Setup` 추가 |
+| Technique 시트 | 검정 배경, 평평한 상단, 그래버 없음, 제목 아래 구분선, 행 62pt Title/3, 태그 21pt 9pt 글자 | Bottom Sheet Dark·Selection Row·Tag 수정 |
+| Life Score | 네비 제목 Title/3, 부제 Footnote, 레이더 332(점선 링·축 라벨·중앙 글로우), 날짜는 밑줄 탭, SUMMARY 행 Body/Large, 본문 Body/Small 흰색 | Radar 컴포넌트 보강, 템플릿 수정 |
+| 온보딩 | 제목 Title/2 24, 입력값 Title/3 20, 밑줄 회색, 헬퍼 없음, FAB 60 우10·하14 | Text Field 오버라이드, FAB 위치 |
+
+발견해서 고친 버그: 섹션 헤더 Mono 변형의 Title 프로퍼티가 중복 생성돼 인스턴스 제목이 바뀌지 않던 문제, 시트 안 태그 인스턴스에 남아 있던 잘못된 채움 오버라이드, 리사이즈한 아바타·FAB가 둥근 사각형이 되던 문제(반경을 `radius/full`에 바인딩).
 
 ## 10. 알려진 한계
 
