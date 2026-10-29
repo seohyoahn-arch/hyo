@@ -17,12 +17,12 @@ Figma 파일: https://www.figma.com/design/L8QrbkFEPcfSiB8KLq5SBA/Untitled
 | 미니 플레이어 | 탭바 위 64pt 유리 바, 썸네일 44 + 제목/아티스트 + Remix + Play/Pause, 하단 2px 진행 바 | `Mini Player` (State=Playing/Paused/Loading), `Progress Bar` Hairline |
 | 버튼 | 크림 #F7F5F0 알약(1차) · 브랜드 그라데이션(Continue/Confirm) · 톤 #2C2C2E · 아웃라인 · 붉은 텍스트(파괴). Large 52, Medium 44, Small 32 | `Button` (Style 5 × Size 2 × State 3), `Button Small` (Style 6 × State 3) |
 | 타이포 | SF Pro 4굵기, 제목형 질문·요금제 헤드라인만 세리프, 모델명·시간·버전은 고정폭 대문자 | 텍스트 스타일 29개 (Display 2 · SF Pro 24 · Mono 3) |
-| 색 | 상태 강조는 핑크 #FF3E9A 한 색(토글·재생 중·배지·커서). 요금제 선택 테두리는 오렌지, Most Popular 초록, Best Value 노랑, 파괴 빨강 | Primitives 50 · Semantic 58 (Dark/Light) |
+| 색 | 상태 강조는 핑크 #FF3E9A 한 색(토글·재생 중·배지·커서). 요금제 선택 테두리는 오렌지, Most Popular 초록, Best Value 노랑, 파괴 빨강 | Primitives 54 · Semantic 59 (Dark/Light) |
 | 시트·메뉴 | 상단 반경 24 다크 시트 + 그래버 36×5, 318 폭 다이얼로그, 220 폭 컨텍스트 메뉴(마지막 행 빨강) | `Sheet / Bottom`, `Dialog / Alert`, `Menu / Context`, `Share Item` |
 
 ## 2. 토큰 구조
 
-여덟 개의 변수 컬렉션으로 나눈다. 번호는 참조 순서다.
+아홉 개의 변수 컬렉션으로 나눈다. 번호는 참조 순서다.
 
 - **01 Primitives** (모드 1개): `neutral/0~1000`, `brand/*`, `warm/*`, `cover/*`, `cool/*`, `system/*`, `alpha/*`. 피커에서 숨김(scopes 없음). 직접 바인딩 금지.
 - **02 Semantic Color** (Dark / Light): `bg/*`, `fg/*`, `icon/*`, `border/*`, `brand/*`, `control/*`, `gradient/*`, `shadow/*`, `highlight/*`. 모든 값은 Primitives의 별칭이고 스코프가 역할별로 제한된다(bg → Fill, fg → Text, icon → Shape·Stroke, border → Stroke, shadow → Effect).
@@ -30,8 +30,9 @@ Figma 파일: https://www.figma.com/design/L8QrbkFEPcfSiB8KLq5SBA/Untitled
 - **04 Radius**: `radius/xs 4 · sm 8 · md 12 · lg 16 · xl 20 · 2xl 24 · 3xl 32 · full 999`.
 - **05 Size**: `icon/*`, `control/*`, `avatar/*`, `thumb/*`, `layout/*`(screen 402×874, status-bar 62, top-bar 54, tab-bar 49, home-indicator 34, mini-player 64, margin 16, gutter 12, content-width 370, fab-height 56, cta-height 52, toggle 51×31, tab-pill 52×40, card-category 120×90), `stroke/*`.
 - **06 Typography**: `font/family/*`, `font/weight/*`, `font/size/*`, `font/line-height/*`. 텍스트 스타일이 이 변수에 바인딩된다.
-- **07 Motion**: `duration/instant 0.1 · fast 0.2 · base 0.3 · slow 0.45 · gradient-loop 6`, `easing/standard · emphasized · spring`.
+- **07 Motion**: `duration/instant 0.1 · fast 0.2 · base 0.3 · slow 0.45 · gradient-loop 6`, `delay/none 0 · short 0.05 · stagger 0.03`, `easing/standard · emphasized · spring`.
 - **08 Opacity**: `opacity/disabled 40 · pressed 70 · inactive 60 · overlay 60 · glass 12 · full 100` (퍼센트).
+- **09 Z-Index**: `z/background 0 · content 10 · sticky-header 20 · top-bar 30 · mini-player 40 · tab-bar 50 · fab 60 · banner 70 · overlay 80 · sheet 90 · menu 100 · dialog 110 · toast 120 · system 1000`. 피커에는 나타나지 않는 참고용 값.
 
 코드 구문은 모든 변수에 붙어 있다. WEB `var(--suno-bg-canvas)`, iOS `SunoColor.bgCanvas` / `SunoSpacing.s16` / `SunoRadius.lg` / `SunoSize.iconMd`, Android `sunoBgCanvas`.
 
@@ -68,6 +69,8 @@ Screen (402×874)
 - Tab Bar Item: Default(icon/inactive) · Active(곡선형 캡슐 bg/tab-active + border/default + 상단 하이라이트, icon/primary, 아바타는 Ring) · Pressed(bg/glass). 전환 0.2s spring.
 - List Row / Song: Default · Playing(제목 fg/accent + 이퀄라이저) · Locked(자물쇠 + "V6 PREVIEW" + Unlock 버튼) · Loading(스켈레톤). Show Unread로 좌측 핑크 점.
 - Search Field / Prompt Field: Default(플레이스홀더 fg/tertiary) · Focused(핑크 커서, 링 없음) · Filled(값 + 지우기, 전송 버튼 활성).
+- Text Field(Default/Centered/Multiline): Default · Focused · Filled · Error(테두리·헬퍼·아이콘 fg/destructive, 글자 수 초과 시) · Disabled(40%). 카운터 "12/60"은 제한이 있을 때 항상 표시. Code Input: Default(첫 칸 커서) · Filled · Error(헬퍼 "That code didn’t work").
+- Empty State(Default/With Action/Error): 검색 초기·결과 없음·네트워크 오류는 토스트가 아니라 콘텐츠 영역의 Empty State로. 로딩은 스켈레톤. Avatar·Thumbnail은 Type=Placeholder로 이미지 실패를 대체한다.
 - Toggle On/Off(+Disabled), Segmented Control Left/Right(+SAVE 20% 배지), Underline Tabs Selected 1~3, Card / Pricing Selected(border/brand 2px), Card / Creator Follow/Following, Mini Player Playing/Paused/Loading, Toast Light/Dark, Progress Banner Loading/Ready.
 - 햅틱: 탭 전환 .selection, 토글 .light, 생성 시작 .medium, 오류 .error.
 
@@ -90,12 +93,21 @@ Screen (402×874)
 - 모션: `Animation.timingCurve(0.4, 0, 0.2, 1, duration: 0.3)` 기본, 탭 캡슐·FAB 복귀는 `.spring(response: 0.35, dampingFraction: 0.7)`. Reduce Motion에서는 그라데이션 루프와 스프링을 끈다.
 - 아이콘: SVG 템플릿 에셋 24pt, `renderingMode(.template)` + `icon/*` 색.
 
-## 8. Do / Don't
+## 8. 접근성 · 반응형 · 예외 처리 요약
+
+- 대비(Dark): fg/primary 18.9:1, fg/secondary 6.8:1, fg/tertiary 5.2:1(#85858A), fg/accent 5.8:1. icon/inactive(#6E6E73)는 3.7:1로 아이콘에만 쓴다. Light: fg/secondary 6.1:1, fg/tertiary 4.7:1.
+- 브랜드 그라데이션 위 흰 레이블은 레이블 뒤 검정 24% 라디얼 스크림을 포함한 상태에서 핑크·오렌지 구간 5.4:1. 앰버 구간에는 레이블을 두지 않는다(그라데이션 방향 좌→우 고정).
+- 터치 44, 32 요소는 히트 영역 확장. VoiceOver 순서: 상태바 → 상단바(좌 → 제목 → 우) → 콘텐츠(위→아래) → 미니플레이어 → 탭바(좌→우). 아이콘 전용 버튼은 accessibilityLabel 필수, 재생 중·잠금은 색 + 아이콘으로 이중 표시.
+- Dynamic Type: 본문·리스트·시트는 AX5까지 Hug로 자라고, Top Bar 제목·버튼·칩은 xxLarge~xxxLarge에서 제한, 탭바·아이콘 버튼·FAB는 고정. Reduce Motion에서 그라데이션 루프·스프링을 끈다.
+- 반응형: 가로 여백 16 고정, 콘텐츠 폭 = 화면 폭 − 32(375→343, 393→361, 402→370, 430→398). 열 수 고정, 카드 폭만 변함. 컴포넌트별 Fixed/Hug/Fill·Min/Max·넘침 규칙은 Layout & Effects 페이지 Resizing 표 기준.
+- Light 모드: Library·Create·Settings 템플릿을 Light로 전환해 검증했다(Templates 페이지 하단). 글로우 색은 gradient/warm-glow 토큰으로 분리했고, 그 외 토큰은 그대로 동작한다. 제품은 Dark만 출시한다.
+
+## 9. Do / Don't
 
 - Do: 화면당 브랜드 그라데이션 버튼 하나. 상태 강조는 핑크 한 색. 유리 면은 뒤에 콘텐츠가 있을 때만. 리스트 제목 1줄 말줄임. 모든 색·간격·반경은 토큰 바인딩. 터치 44 유지.
 - Don't: Primitives 직접 바인딩. 두 번째 강조색 추가. 탭바에 라벨 텍스트·탭 수 변경. Disabled에 그림자·글로우. 컴포넌트 detach. hex·px 하드코딩.
 
-## 9. 파일 페이지 구성
+## 10. 파일 페이지 구성
 
 | 페이지 | 내용 |
 |---|---|
@@ -103,18 +115,29 @@ Screen (402×874)
 | 📖 Guidelines | 이 문서의 피그마 버전(원칙·구조·토큰·레이아웃·컴포넌트·상태·모션·접근성·핸드오프·변경 관리) |
 | 🎨 Foundations · Color | Primitives 스와치 50, Semantic 표 58(Dark/Light 스와치, 용도, hex, iOS 구문), 배경 5종, 사용 규칙 |
 | 🔤 Foundations · Typography | 서체 3종, 타입 스케일 29 표본과 iOS 매핑, 규칙 |
-| 📐 Foundations · Layout & Effects | 402×874 해부도, Spacing·Radius·Size 표, 효과 9종 데모, Motion·Opacity |
+| 📐 Foundations · Layout & Effects | 402×874 해부도, Spacing·Radius·Size 표, 효과 9종 데모, Motion(delay 포함)·Opacity, iPhone 폭별 규칙, 컴포넌트별 리사이징 표, Z-Index, Dynamic Type 표 |
 | ✦ Icons | 24px 아이콘 83종 (Nav 5 · Media 16 · Action 38 · Object 20 · Social 4) |
 | 🧩 Navigation | Icon Button(24) · FAB Mini(3) · FAB Create(4) · Model Pill · Top Bar(4) · Tab Bar Item(6) · Tab Bar(10) · Mini Player(3) · Toast(2) · Progress Banner(2) · Background(5) |
-| 🧩 Buttons & Controls | Avatar(12) · Badge(3) · Thumbnail(4) · Toggle(4) · Chip(12) · Button(30) · Button Small(18) · Segmented Control(2) · Underline Tabs(5) · Search Field(3) · Prompt Field(3) · Step Slider(3) · Progress Bar(2) |
-| 🧩 Cards · Lists · Overlays | List Row / Song(4) · Setting(12) · Menu(3) · Section Header(2) · Comment Row · Card / Category(2) · Song Poster(2) · Pricing(2) · Creator(2) · Promo Banner · Sheet / Bottom(2) · Dialog / Alert · Menu / Context(3) · Share Item(5) |
-| 📱 Templates | Home · Library · Create · Now Playing · Profile · Settings · Auth · Onboarding · Phone Number |
+| 🧩 Buttons & Controls | Avatar(24, Photo/Placeholder) · Badge(3) · Thumbnail(8, Image/Placeholder) · Toggle(4) · Chip(12) · Button(30) · Button Small(18) · Segmented Control(2) · Underline Tabs(5) · Search Field(3) · Prompt Field(3) · Text Field(15) · Code Input(3) · Step Slider(3) · Progress Bar(2) · Page Control(5) |
+| 🧩 Cards · Lists · Overlays | List Row / Song(4) · Setting(12) · Menu(3) · Section Header(2) · Comment Row · Card / Category(2) · Song Poster(2) · Pricing(2) · Creator(2) · Promo Banner · Sheet / Bottom(2) · Dialog / Alert · Menu / Context(3) · Share Item(5) · Empty State(3) · Tooltip(2) |
+| 📱 Templates | Home · Library · Create · Now Playing · Profile · Settings · Auth · Onboarding · Phone Number + Light mode check 3장(Library·Create·Settings 검증용) |
 | — Reference — | IMG(원본 131장) · Design Source(iOS 27 예시, 이미지 소스) |
 
-## 10. 알려진 한계
+## 11. 알려진 한계
 
 - 세리프는 Figma 환경에 New York이 없어 Instrument Serif로 대체했다. iOS에서는 New York(`.serif` design) 또는 Instrument Serif 번들 중 하나로 통일해야 한다.
 - 템플릿의 사진은 Design Source 페이지의 예시 이미지(cosmos·여행·공연)다. 실제 앨범 아트로 교체해야 한다.
 - 브랜드 그라데이션의 유기적인 블롭 형태는 라디얼 그라데이션 2개와 노이즈로 근사했다. 실제 앱의 애니메이션 셰이더(6s 루프)는 모션 토큰으로만 정의했다.
 - iOS 27 라이브러리는 상태바·홈 인디케이터·키보드만 쓴다. 탭바와 상단바는 Suno의 캡슐 활성 표시와 유리 버튼이 시스템과 달라 자체 컴포넌트로 만들었다.
 - Light 모드 토큰은 정의만 되어 있고 템플릿은 모두 Dark다.
+
+## 12. 변경 관리
+
+- 버전: Cover의 버전 문자열, 이 문서, `suno-ios-tokens.json`의 `$meta.version`을 함께 올린다. 토큰 이름 변경은 코드 구문도 같이 바꾼다.
+- 폐기: 토큰·컴포넌트를 없앨 때는 이름 앞에 `_deprecated/`를 붙이고 description에 대체 항목과 제거 예정 버전을 적는다. 한 마이너 버전 동안 유지한 뒤 제거한다. 변형 축을 줄일 때는 인스턴스를 먼저 새 변형으로 옮긴다.
+- 추가: 새 색은 Primitives에 원시값, Semantic에 역할 이름으로. 변형 축은 Style·Size·State·Type만 쓰고 30 조합을 넘으면 컴포넌트를 나눈다. 아이콘은 `Icon/카테고리/이름` 24×24.
+
+### 변경 이력
+
+- 1.1.0 (2026-10-29): 대비 보정(neutral/350·450 추가, fg/tertiary·fg/secondary·icon/inactive 재정의), Brand 버튼·FAB 레이블 스크림, gradient/warm-glow, delay 토큰, 09 Z-Index, Text Field·Code Input·Page Control·Empty State·Tooltip 추가, Avatar/Thumbnail Placeholder 타입, 버튼·칩 Min/Max와 1줄 말줄임, 리사이징·Dynamic Type·iPhone 폭별 규칙 표, Light 모드 검증.
+- 1.0.0 (2026-10-29): 최초 구축.

@@ -1,7 +1,7 @@
 {
   "$meta": {
     "name": "Suno iOS Design System",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "date": "2026-10-29",
     "figma": "https://www.figma.com/design/L8QrbkFEPcfSiB8KLq5SBA/",
     "device": "iPhone 402x874 pt",
@@ -10,7 +10,11 @@
         "Dark (default)",
         "Light"
       ]
-    }
+    },
+    "changelog": [
+      "1.1.0 (2026-10-29): 대비 보정(neutral/350·450, fg/tertiary·fg/secondary·icon/inactive 재정의), Brand 버튼 레이블 스크림, gradient/warm-glow, delay 토큰, 09 Z-Index, Text Field·Code Input·Page Control·Empty State·Tooltip 추가, Avatar/Thumbnail Placeholder 타입, 리사이징·Dynamic Type 규칙, Light 모드 검증",
+      "1.0.0 (2026-10-29): 최초 구축"
+    ]
   },
   "01 Primitives": {
     "neutral/0": {
@@ -412,6 +416,38 @@
         "ios": "SunoPrimitive.primAlphaMagenta32",
         "android": "sunoPrimAlphaMagenta32"
       }
+    },
+    "neutral/350": {
+      "value": "#85858A",
+      "code": {
+        "web": "var(--suno-prim-neutral-350)",
+        "ios": "SunoPrimitive.primNeutral350",
+        "android": "sunoPrimNeutral350"
+      }
+    },
+    "neutral/450": {
+      "value": "#5C5C61",
+      "code": {
+        "web": "var(--suno-prim-neutral-450)",
+        "ios": "SunoPrimitive.primNeutral450",
+        "android": "sunoPrimNeutral450"
+      }
+    },
+    "alpha/warm-35": {
+      "value": "#7A4A3359",
+      "code": {
+        "web": "var(--suno-prim-alpha-warm-35)",
+        "ios": "SunoPrimitive.primAlphaWarm35",
+        "android": "sunoPrimAlphaWarm35"
+      }
+    },
+    "alpha/orange-10": {
+      "value": "#DE6E481A",
+      "code": {
+        "web": "var(--suno-prim-alpha-orange-10)",
+        "ios": "SunoPrimitive.primAlphaOrange10",
+        "android": "sunoPrimAlphaOrange10"
+      }
     }
   },
   "02 Semantic Color": {
@@ -709,10 +745,10 @@
         "value": "#9A9A9E"
       },
       "light": {
-        "alias": "neutral/400",
-        "value": "#6E6E73"
+        "alias": "neutral/450",
+        "value": "#5C5C61"
       },
-      "description": "2차 텍스트",
+      "description": "2차 텍스트 (부제·메타). Dark 6.8:1 / Light 6.1:1",
       "code": {
         "web": "var(--suno-fg-secondary)",
         "ios": "SunoColor.fgSecondary",
@@ -721,14 +757,14 @@
     },
     "fg/tertiary": {
       "dark": {
+        "alias": "neutral/350",
+        "value": "#85858A"
+      },
+      "light": {
         "alias": "neutral/400",
         "value": "#6E6E73"
       },
-      "light": {
-        "alias": "neutral/300",
-        "value": "#9A9A9E"
-      },
-      "description": "3차 텍스트·플레이스홀더",
+      "description": "3차 텍스트 (플레이스홀더·시간). Dark 5.2:1 / Light 4.7:1",
       "code": {
         "web": "var(--suno-fg-tertiary)",
         "ios": "SunoColor.fgTertiary",
@@ -885,8 +921,8 @@
         "value": "#9A9A9E"
       },
       "light": {
-        "alias": "neutral/400",
-        "value": "#6E6E73"
+        "alias": "neutral/450",
+        "value": "#5C5C61"
       },
       "description": "보조 아이콘",
       "code": {
@@ -904,7 +940,7 @@
         "alias": "neutral/300",
         "value": "#9A9A9E"
       },
-      "description": "탭바 비활성 아이콘",
+      "description": "탭바 비활성 아이콘 (UI 요소 3:1 충족, 텍스트 사용 금지)",
       "code": {
         "web": "var(--suno-icon-inactive)",
         "ios": "SunoColor.iconInactive",
@@ -1341,6 +1377,22 @@
         "web": "var(--suno-highlight-glass)",
         "ios": "SunoColor.highlightGlass",
         "android": "sunoHighlightGlass"
+      }
+    },
+    "gradient/warm-glow": {
+      "dark": {
+        "alias": "alpha/warm-35",
+        "value": "#7A4A3359"
+      },
+      "light": {
+        "alias": "alpha/orange-10",
+        "value": "#DE6E481A"
+      },
+      "description": "따뜻한 배경 중앙 라디얼 글로우",
+      "code": {
+        "web": "var(--suno-gradient-warm-glow)",
+        "ios": "SunoColor.gradientWarmGlow",
+        "android": "sunoGradientWarmGlow"
       }
     }
   },
@@ -2127,6 +2179,33 @@
         "ios": "SunoMotion.easingSpring",
         "android": "sunoEasingSpring"
       }
+    },
+    "delay/none": {
+      "value": "0s",
+      "description": "기본",
+      "code": {
+        "web": "var(--suno-delay-none)",
+        "ios": "SunoMotion.delayNone",
+        "android": "sunoDelayNone"
+      }
+    },
+    "delay/short": {
+      "value": "0.05s",
+      "description": "연속 요소 첫 지연",
+      "code": {
+        "web": "var(--suno-delay-short)",
+        "ios": "SunoMotion.delayShort",
+        "android": "sunoDelayShort"
+      }
+    },
+    "delay/stagger": {
+      "value": "0.03s",
+      "description": "리스트·칩 항목 간 지연",
+      "code": {
+        "web": "var(--suno-delay-stagger)",
+        "ios": "SunoMotion.delayStagger",
+        "android": "sunoDelayStagger"
+      }
     }
   },
   "08 Opacity": {
@@ -2429,5 +2508,133 @@
     "Grain/Brand Gradient": "noise white 35% size 1.2 density 0.55",
     "Grain/Background": "noise white 8% size 1.0 density 0.40",
     "Composite/FAB Create": "Level 3 + Glow/Brand + Grain/Brand Gradient"
+  },
+  "09 Z-Index": {
+    "z/background": {
+      "value": 0,
+      "description": "Background",
+      "code": {
+        "web": "var(--suno-z-background)",
+        "ios": "SunoZ.background",
+        "android": "sunoZBackground"
+      }
+    },
+    "z/content": {
+      "value": 10,
+      "description": "Content (Scroll)",
+      "code": {
+        "web": "var(--suno-z-content)",
+        "ios": "SunoZ.content",
+        "android": "sunoZContent"
+      }
+    },
+    "z/sticky-header": {
+      "value": 20,
+      "description": "고정 섹션 헤더·Underline Tabs",
+      "code": {
+        "web": "var(--suno-z-sticky-header)",
+        "ios": "SunoZ.stickyHeader",
+        "android": "sunoZStickyHeader"
+      }
+    },
+    "z/top-bar": {
+      "value": 30,
+      "description": "Top Bar",
+      "code": {
+        "web": "var(--suno-z-top-bar)",
+        "ios": "SunoZ.topBar",
+        "android": "sunoZTopBar"
+      }
+    },
+    "z/mini-player": {
+      "value": 40,
+      "description": "Mini Player",
+      "code": {
+        "web": "var(--suno-z-mini-player)",
+        "ios": "SunoZ.miniPlayer",
+        "android": "sunoZMiniPlayer"
+      }
+    },
+    "z/tab-bar": {
+      "value": 50,
+      "description": "Tab Bar",
+      "code": {
+        "web": "var(--suno-z-tab-bar)",
+        "ios": "SunoZ.tabBar",
+        "android": "sunoZTabBar"
+      }
+    },
+    "z/fab": {
+      "value": 60,
+      "description": "FAB",
+      "code": {
+        "web": "var(--suno-z-fab)",
+        "ios": "SunoZ.fab",
+        "android": "sunoZFab"
+      }
+    },
+    "z/banner": {
+      "value": 70,
+      "description": "Progress Banner",
+      "code": {
+        "web": "var(--suno-z-banner)",
+        "ios": "SunoZ.banner",
+        "android": "sunoZBanner"
+      }
+    },
+    "z/overlay": {
+      "value": 80,
+      "description": "스크림",
+      "code": {
+        "web": "var(--suno-z-overlay)",
+        "ios": "SunoZ.overlay",
+        "android": "sunoZOverlay"
+      }
+    },
+    "z/sheet": {
+      "value": 90,
+      "description": "Sheet / Bottom",
+      "code": {
+        "web": "var(--suno-z-sheet)",
+        "ios": "SunoZ.sheet",
+        "android": "sunoZSheet"
+      }
+    },
+    "z/menu": {
+      "value": 100,
+      "description": "Menu / Context · Tooltip",
+      "code": {
+        "web": "var(--suno-z-menu)",
+        "ios": "SunoZ.menu",
+        "android": "sunoZMenu"
+      }
+    },
+    "z/dialog": {
+      "value": 110,
+      "description": "Dialog / Alert",
+      "code": {
+        "web": "var(--suno-z-dialog)",
+        "ios": "SunoZ.dialog",
+        "android": "sunoZDialog"
+      }
+    },
+    "z/toast": {
+      "value": 120,
+      "description": "Toast",
+      "code": {
+        "web": "var(--suno-z-toast)",
+        "ios": "SunoZ.toast",
+        "android": "sunoZToast"
+      }
+    },
+    "z/system": {
+      "value": 1000,
+      "description": "Status Bar · 키보드 (iOS 관리)",
+      "code": {
+        "web": "var(--suno-z-system)",
+        "ios": "SunoZ.system",
+        "android": "sunoZSystem"
+      }
+    }
   }
 }
