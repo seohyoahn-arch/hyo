@@ -1,4 +1,4 @@
-# Open iOS Design System — 디자인 가이드라인 (v1.5.1)
+# Open iOS Design System — 디자인 가이드라인 (v1.5.2)
 
 Figma 파일: https://www.figma.com/design/Uh7ZcxfLnMibPHshG1bUur/Untitled
 기준 기기: iPhone 402 × 874 pt (Dynamic Island), 상태바 62, 하단 세이프 에어리어 34
@@ -289,6 +289,69 @@ Tab Item·Tab Bar·Nav Bar·Segment·Week Strip·Category Chip, Button Small·FA
 ### 템플릿 재검사
 
 13장 모두 Helvetica Neue 외 서체 0, 스타일 없는 글자 0, 분리된 컴포넌트 0.
+
+## 18. v1.5.2 공식 웹사이트 CSS 대조
+
+o-p-e-n.com의 CSS 선언(2026-11-02 추출)으로 서체를 확정하고, 지금 시스템과 맞는 곳과 어긋나는 곳을 갈랐다. 웹 값은 선언 원문이고 계산값이 아니다. 앱 화면은 웹과 같은 브랜드지만 크기 사다리가 다르므로, 서체 가족과 역할은 웹을 근거로 삼고 크기와 색은 앱 실측을 유지한다.
+
+### 확정된 것
+
+- 서체는 **Monument Grotesk Regular**(읽는 글)와 **Monument Grotesk Semi-Mono**(대문자 라벨) 두 가지다. 웹 전체에서 굵기는 400 하나다. 서체 스택은 `Monument Grotesk Regular, Helvetica Neue, Helvetica`다.
+- 지금 Figma가 쓰는 Helvetica Neue는 웹 스택의 공식 대체 서체와 같다. v1.5에서 글자 모양을 비교해 Helvetica 계열을 고른 판단이 웹 선언으로 확인된 셈이다.
+- 모노는 DM Mono를 대신 쓰고 있다. 실제 Semi-Mono와 폭이 다르다.
+
+### 설치가 안 된 서체
+
+Figma 런타임에서 `Monument Grotesk`, `ABC Monument Grotesk` 계열 어느 이름도 불러와지지 않는다. 파일 안 텍스트 스타일 둘(`Breathe/Search/10-3`, `Breathe/Search/10-4`)이 `ABC Monument Grotesk Mono/Semi Mono Variable Trial`을 가리키지만 서체가 없어 누락 상태다. 라이선스 서체를 기기에 설치하면 한 번에 바꿀 수 있도록, 아래 값을 같이 적어 둔다.
+
+### 웹 17개 역할과 앱 스타일
+
+| 웹 클래스 | 크기 / 행 | 자간(웹) | 가까운 앱 스타일 |
+|---|---|---|---|
+| typo-display-l | 80 / 73.6 | −2.4px | 없음 |
+| typo-display | 60 / 56 | 없음 | Display/Stat 56/60 |
+| typo-title-l | 48 / 48 | 없음 | 없음 |
+| typo-title | 36 / 36 | −0.01em | Display/Hero 36/36 (앱은 대문자) |
+| typo-title-s | 24 / 24 | +1% | Title/2 24/26 |
+| typo-bodycopy-tall | 18 / 24 | +1% | Body/Large 17/22 |
+| typo-bodycopy | 18 / 20 | −0.01em | Body/Large 17/22 |
+| typo-bodycopy-s | 14 / 16 | 없음 | Body/Small 14/16, 같음 |
+| typo-bodycopy-xs | 12 / 16 | 잘못된 값 | Caption/1 12/16, 같음 |
+| typo-title-xs-mono | 14 / 20 | 없음 | Mono/Body 13/18 |
+| typo-title-s-mono | 24 / 24 | 없음 | Mono/Title 20/24 |
+| typo-tag-s-mono | 12 / 13.8 | 없음 | Mono/Label 12/14, 같음 |
+| typo-tag-xs-mono | 10 / 10 | 없음 | Mono/Tab 10/12, Mono/Caption 10/14 |
+
+나머지 모노 4종(display 60, title-l 48, title 36, tag 18)은 앱에 대응이 없다. 크기가 정확히 같은 스타일은 Body/Small, Caption/1, Mono/Label, Hero 행 높이이고, 나머지는 한두 단계 어긋난다.
+
+### 자간은 서체를 바꾸면 다시 맞춰야 한다
+
+지금 Figma의 자간(Title/2 −0.4, Display/Hero −0.7, Body/Large −0.2 등)은 Helvetica Neue로 화면 폭을 맞추려고 잡은 보정값이다. Monument Grotesk는 6~9% 좁아서 같은 보정이 필요 없다. 웹 선언은 title −0.01em, title-s +1%, bodycopy −0.01em, bodycopy-tall +1%다. 실제 서체를 설치하는 날 이 값으로 되돌린다.
+
+### 공간과 모양의 웹 근거
+
+| 항목 | 웹 값 | 앱 토큰 |
+|---|---|---|
+| 모바일 그리드 간격, 좁은 페이지 박스 | 10px | `margin/screen` 10과 일치 (현재 변수는 12) |
+| 콘텐츠 박스 좌우 | 20px | `nav/padding-x` 20, `margin/onboarding` 20 |
+| 기본 버튼 | 높이 60, 반경 999, 18/20 | `control/height-lg` 60 일치 |
+| 반경 사다리 | 1 / 4 / 6 / 10 / 20 / 50% | 썸네일 4, 타일 6 일치 |
+
+화면 여백 10은 이전 절의 열린 질문에 대한 웹 쪽 증거다. 원본 2배 캡처의 타일·아바타 시작점(10pt)과 웹 값이 둘 다 10을 가리킨다.
+
+### 색 대조
+
+웹 색: 검정 `#000`, 크림 `#EEECE7`, 크림 60% `#8F8E8B`, 40% `#5F5E5C`, 20% `#302F2E`, 10% `#181817`, 시트러스 `#A2B833`, 스틸블루 `#487F7F`, 코퍼 `#BF7D41`, 세피아 `#7A3700`, 파이퍼 `#D25E2B`, 에러 `#D82828`.
+
+- 검정, 크림, 회색 사다리는 앱 토큰과 거의 같다. 웹 회색은 크림 기반이라 약간 따뜻하다.
+- 시트러스 `#A2B833`은 앱 실측 라임 `#C3D44B`보다 어둡다. 앱 화면은 밝은 쪽이므로 실측을 유지한다.
+- 스틸블루, 코퍼는 정확히 대응하는 토큰이 없다. 앱 카테고리 색은 실측값이다.
+
+### 파일 상태 변화 (확인만 함)
+
+- 페이지가 5개로 합쳐졌다: Open, Design Source, Guidelines & Foundations, Components, Templates · Screens. 합치면서 Guidelines와 Typography 프레임은 새 ID(`200:…`)로 복사됐다. 이전 기록의 노드 번호는 그대로 쓸 수 없다.
+- 변수 컬렉션에 이름이 겹치는 것이 생겼다: `Semantic` 둘(75개, 7개), `Primitives` 둘(77개, 23개), 새로 `Component`, `Breathe / Primitives`, `Breathe / Semantic`. 이름으로 컬렉션을 찾는 스크립트가 엉뚱한 쪽을 잡을 수 있다.
+- `Breathe/…` 텍스트 스타일 7개와 `font/family`(Inter), `font/style` 문자열 변수가 새로 있다. 이 문서의 체계 밖이다.
 
 ## 10. 알려진 한계
 
