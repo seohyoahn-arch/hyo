@@ -1,4 +1,4 @@
-# Open iOS Design System — 디자인 가이드라인 (v1.5.2)
+# Open iOS Design System — 디자인 가이드라인 (v1.5.3)
 
 Figma 파일: https://www.figma.com/design/Uh7ZcxfLnMibPHshG1bUur/Untitled
 기준 기기: iPhone 402 × 874 pt (Dynamic Island), 상태바 62, 하단 세이프 에어리어 34
@@ -332,12 +332,12 @@ Figma 런타임에서 `Monument Grotesk`, `ABC Monument Grotesk` 계열 어느 �
 
 | 항목 | 웹 값 | 앱 토큰 |
 |---|---|---|
-| 모바일 그리드 간격, 좁은 페이지 박스 | 10px | `margin/screen` 10과 일치 (현재 변수는 12) |
+| 모바일 그리드 간격, 좁은 페이지 박스 | 10px | `margin/screen` 10과 일치 (v1.5.3에서 변수도 10으로 확정) |
 | 콘텐츠 박스 좌우 | 20px | `nav/padding-x` 20, `margin/onboarding` 20 |
 | 기본 버튼 | 높이 60, 반경 999, 18/20 | `control/height-lg` 60 일치 |
 | 반경 사다리 | 1 / 4 / 6 / 10 / 20 / 50% | 썸네일 4, 타일 6 일치 |
 
-화면 여백 10은 이전 절의 열린 질문에 대한 웹 쪽 증거다. 원본 2배 캡처의 타일·아바타 시작점(10pt)과 웹 값이 둘 다 10을 가리킨다.
+화면 여백 10은 원본 2배 캡처의 타일·아바타 시작점(10pt)과 웹 값이 둘 다 가리킨다. 아래 19절에서 확정했다.
 
 ### 색 대조
 
@@ -352,6 +352,30 @@ Figma 런타임에서 `Monument Grotesk`, `ABC Monument Grotesk` 계열 어느 �
 - 페이지가 5개로 합쳐졌다: Open, Design Source, Guidelines & Foundations, Components, Templates · Screens. 합치면서 Guidelines와 Typography 프레임은 새 ID(`200:…`)로 복사됐다. 이전 기록의 노드 번호는 그대로 쓸 수 없다.
 - 변수 컬렉션에 이름이 겹치는 것이 생겼다: `Semantic` 둘(75개, 7개), `Primitives` 둘(77개, 23개), 새로 `Component`, `Breathe / Primitives`, `Breathe / Semantic`. 이름으로 컬렉션을 찾는 스크립트가 엉뚱한 쪽을 잡을 수 있다.
 - `Breathe/…` 텍스트 스타일 7개와 `font/family`(Inter), `font/style` 문자열 변수가 새로 있다. 이 문서의 체계 밖이다.
+
+## 19. v1.5.3 화면 여백 10 확정
+
+15절 이후 `margin/screen`이 파일에서 12로 바뀌어 있었고, 컴포넌트는 폭 382(402 − 10×2)로 만들어져 있어 Community 오른쪽 끝이 394, Settings가 404까지 나갔다. 변수를 10으로 맞췄다.
+
+| 항목 | 이전 | 변경 |
+|---|---|---|
+| `margin/screen` (세 모드 모두) | 12 | 10 |
+| `content/width` 402 / 375 / 430 | 378 / 351 / 406 | 382 / 355 / 410 |
+| `grid/col-2` | 185 / 171.5 / 199 | 187 / 173.5 / 201 |
+| `grid/col-3` | 118 / 109 / 127.3 | 119.33 / 110.33 / 128.67 |
+
+파생 토큰은 모드별 `screen/width`, `margin/screen`, `gutter/grid` 8, `gutter/card` 12에서 다시 계산했다. 값이 글자로만 적힌 anatomy 표는 변수와 연결되지 않으므로 직접 고쳤다.
+
+- 표의 어긋난 값 5개를 바로잡았다: `margin/screen` 16에서 10, `tab-bar/curve-rise` 11에서 10, `control/height-lg` 56에서 60, `fab/play-size` 56에서 58, `stroke/ring` 2에서 1.5.
+- 표에 없던 토큰 18개를 행으로 추가했다. 이제 Layout 컬렉션의 숫자 토큰 52개가 모두 표에 있다.
+- 도식의 여백 띠를 16에서 10으로, 라벨을 "382 wide (10 margins)"로 고쳤다. 헤더 높이는 컴포넌트마다 다르므로(Segment 40, Week Strip 48, Nav Bar 50) "44 nominal"로 적었다.
+
+템플릿 13장을 다시 재 보니 좌우 여백이 10으로 맞고 오른쪽 끝이 화면 안에 들어온다. 남은 예외는 두 가지다.
+
+- Life Score의 레이더 프레임은 415 폭이라 양쪽으로 6~7씩 나간다. 원 자체는 332라 눈에는 들어오지만 프레임 기준으로는 규칙 밖이다.
+- Onboarding · Email은 좌우 17이고 변수에 연결돼 있지 않다. 원본 입력선 시작점(16.5)을 따랐다.
+
+`nav/height`는 44로 남겼다. Nav Bar 컴포넌트는 50이라 토큰과 컴포넌트가 어긋난 채다.
 
 ## 10. 알려진 한계
 
